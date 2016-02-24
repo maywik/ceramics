@@ -1,0 +1,86 @@
+<scroll-to-top><a id="top-scroll">Вверх</a></scroll-to-top>
+<div ng-if="isAdmin"><a id="remove-content" ng-click="removeContent()">Удалить</a></div>
+<div ng-if="activeOrder"><a id="order-content" ng-click="toggleModal()">Заказать</a></div>
+
+<div class="row row-offcanvas row-offcanvas-right">
+    <div class="col-xs-12 col-sm-12">
+        <div class="jumbotron text-center">
+            <h1>Продукция</h1>
+            <p>В этом разделе Вы можете просмотреть каталог и заказать продукцию которая Вам понравилась.</p>
+            <div class="row" ng-if="isAdmin">
+                <div class="col-md-12">
+                    <form action="/upload" enctype="multipart/form-data" method="post">
+                        File <input type="file" name="img" accept="image/*" multiple>
+                        <input type="submit" value="Upload">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default panel-result">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12">
+                        <div class="panel panel-default" ng-repeat="(keyitem, item) in result.json.catalog">
+                            <div class="collection panel-heading">
+                                <div class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" data-target="#{{keyitem}}" class="collapsed">{{item[0].productName}}</a>
+                                </div>
+                            </div>
+                            <div id="{{keyitem}}"  class="panel-collapse collapse">
+                                <div class="wrap-elems-paragraph">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-sm-6" ng-repeat="(keycollection, collectionitem) in item">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <div class="icon thumbnail">
+                                                        <img ng-src="{{collectionitem.path}}{{collectionitem.imageName}}" width="120" height="120" err-src="http://google.com/favicon.ico">
+                                                    </div>
+                                                    <div class="panel-title">
+                                                        <!--<a data-toggle="collapse" data-parent="#accordion" data-target="#{{keyitem}}chl{{keycollection}}" class="collapsed">{{collectionitem.title}}</a>-->
+                                                        <h3>{{collectionitem.title}}</h3>
+                                                        <div>
+                                                            <span>Цена: {{collectionitem.price}}</span>
+                                                        </div>
+                                                        <div>
+                                                            <span>Заказать: <input type="checkbox" ng-model= "collectionitem.in_order" ng-change="updateOrderBtn()"></span>
+                                                            <span ng-if="isAdmin">Удалить: <input type="checkbox" ng-model= "collectionitem.rem_selected"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--<div id="{{keyitem}}chl{{keycollection}}" class="panel-collapse collapse">-->
+                                                    <!--<div class="panel-body text-wrap">-->
+                                                        <!--<pre pretty-json="collectionitem" ng-show="collectionitem"></pre>-->
+                                                        <!--<div class="glass-pane" ng-show="isLoading">-->
+                                                            <!--<div class="loading-img"></div>-->
+                                                        <!--</div>-->
+                                                    <!--</div>-->
+                                                    <!--<img ng-src="{{collectionitem.path}}{{collectionitem.imageName}}" width='100%' height='100%' err-src="http://google.com/favicon.ico">-->
+                                                <!--</div>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-pane" ng-show="isLoading">
+                    <div class="loading-img"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<modal title="Форма заказа" visible="showModal">
+    <form role="form">
+        <div class="form-group">
+            <label>Имя</label>
+            <input type="text" class="form-control" ng-model="user.name" placeholder="Введите имя" />
+        </div>
+        <div class="form-group">
+            <label>Телефон</label>
+            <input type="text" class="form-control"  ng-model="user.phone" placeholder="Введите телефон" />
+        </div>
+        <input type="submit" ng-click="orderContent()" class="btn btn-default" value="Заказать">
+    </form>
+</modal>

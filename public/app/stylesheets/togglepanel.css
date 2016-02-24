@@ -1,0 +1,66 @@
+div.panel-heading {
+    position: relative;
+}
+
+div.panel-heading a:after {
+    font-family:'Glyphicons Halflings';
+    content:"\e114";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: grey;
+}
+
+div.panel-heading a.collapsed:after {
+    content:"\e080";
+}
+
+div.panel-heading div.icon.thumbnail,
+div.panel-heading div.panel-title
+{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+div.panel-heading div.icon.thumbnail {
+    margin-bottom: 0;
+}
+
+div.collection.panel-heading
+{
+    background-color: #E1DBCB;
+    cursor: default;
+}
+
+div.panel-filter .panel-heading a:after {
+    content:"";
+}
+
+div.panel-filter .panel-heading {
+    background-color: #eee;
+}
+
+.panel-group .panel-filter {
+    margin-bottom: 10px;
+}
+
+div.hide-filter-panel {
+    border:none;
+}
+
+div.hide-filter-panel > div.panel-heading > a:after,
+div.hide-filter-panel > div.panel-heading > a.collapsed:after{
+    content: '';
+}
+
+div.hide-filter-panel > div.panel-heading {
+    background-color: white;
+    padding: 0;
+    margin: 15px 0;
+    /*border-bottom: 1px solid #ddd;*/
+}
+
+div.hide-filter-panel {
+    box-shadow: none;
+}

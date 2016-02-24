@@ -1,0 +1,4163 @@
+{
+  "restEndPoints": {
+      "search": [
+          "http://rexapi.g.comcast.net:80",
+          "http://rexapi-b.g.comcast.net:80",
+          "http://rex.ccp.xcal.tv:10123"
+      ],
+      "browse": [
+          "http://rexapi.g.comcast.net:80",
+          "http://rexapi-b.g.comcast.net:80",
+          "http://rex.ccp.xcal.tv:10124"
+      ],
+      "recommendations": [
+          "http://rexapi-chcgo-a-chcgo.cable.comcast.com/rex/v3 (CH2 ROVI 3.x)",
+          "http://rexapi-chcgo-b-chcgo.cable.comcast.com/rex/v3 (CH2 VCW 3.x)",
+          "http://rexapi-chcgo-b-chcgo.cable.comcast.com/rex/ (CH2 NGB)",
+          "http://rexapi-chcgo.cable.comcast.com/rex/v3 (NCDS 2.6)",
+          "http://ccp-ch2a.cable.comcast.com/rex/v3 (CH2 CCP A VIP )",
+          "http://ccp-ch2b.cable.comcast.com/rex/v3 (CH2 CCP B VIP )",
+          "http://rexapi-wcdc.cable.comcast.com/rex/v3 (WC Main Merlin)",
+          "http://rexapi-wcdc-a.cable.comcast.com/rex/v3 (WC A VIP Merlin)",
+          "http://rexapi-wcdc-b.cable.comcast.com/rex/v3 (WC B VIP Merlin)",
+          "http://ccp-wcdca.cable.comcast.com/rex/v3 (WC CCP A VIP)",
+          "http://ccp-wcdcb.cable.comcast.com/rex/v3 (WC CCP B VIP)",
+          "http://rexapi.g.comcast.net/rex/v3 (GSLB Main)",
+          "http://rexapi-a.g.comcast.net/rex/v3 (GSLB A)",
+          "http://rexapi-b.g.comcast.net/rex/v3 (GSLB B)",
+          "http://rex.ccp.xcal.tv:/rex/v3 (GSLB CCP VIP)",
+          "http://rex.ccp.xcal.tv:10124/rex/ (GSLB CCP VIP)",
+          "http://rexapi-cmc.cable.comcast.com/rex/v3 (CMC Main)",
+          "http://rexapi-cmc-a.cable.comcast.com/rex/v3 (CMC A)",
+          "http://rexapi-cmc-b.cable.comcast.com/rex/v3 (CMC B)",
+          "http://ccp-cmca.cable.comcast.com/rex/v3 (CMC CCP A VIP)",
+          "http://ccp-cmcb.cable.comcast.com/rex/v3 (CMC CCP B VIP)",
+          "http://rex-next.cable.comcast.com/rex/v3 (NEXT)",
+          "http://10.252.132.151/rex/v3 (TQM)"
+      ],
+      "menu": [
+          "http://udbbrs.g.comcast.net:9096"
+      ]
+  },
+  "rexClients": [
+      "id:Rexerciser,product:Monitoring",
+      "id:xCal,product:X1",
+      "id:xCal,product:X2",
+      "id:xCal,product:RNG150",
+      "id:xCal,product:parker",
+      "id:xCal,product:mccoy",
+      "id:xCal,product:logan",
+      "id:Xcal,product:PA-X1",
+      "id:Native,product:Vespa",
+      "id:Xfintitytv,product:.com",
+      "id:Xfintitytv,product:streampix",
+      "id:Xfinitytv,product:.com",
+      "id:Columbus,product:Xbox",
+      "id:Columbus,product:Samsung",
+      "id:cil,product:xfinstant",
+      "id:cDVR,product:quantum"
+  ],
+  "timeZones": {
+      "label" : "Time Zones",
+      "select": {
+          "300": "Washington, D.C",
+          "360": "St. Luis",
+          "420": "Denver",
+          "480": "Los Angeles",
+          "540": "Anchorage",
+          "600": "Honolulu"
+      },
+      "param": "tzOffset",
+      "value": "300"
+  },
+  "schemas": [ "v1","2.0", "2.1", "2.2", "2.3", "3.0", "4.0" ],
+  "browseProgram": {
+      "templates": {
+          "restoption": {
+              "link": "browseProgramRestOption",
+              "filterContentLink": "app/browse/view/templates/program/browse-program-rest-opt.html",
+              "title": "REST Options"
+          },
+          "ars": {
+              "link": "browseProgramArs",
+              "filterContentLink": "app/browse/view/templates/program/browse-program-ars.html",
+              "title": "ARS"
+          },
+          "sources": {
+              "link": "browseProgramSources",
+              "filterContentLink": "app/browse/view/templates/program/browse-program-sources.html",
+              "title": "Sources"
+          },
+          "filters": {
+              "link": "browseProgramFilters",
+              "filterContentLink": "app/browse/view/templates/program/browse-program-filters.html",
+              "title": "Filters"
+          },
+          "sortandgroup": {
+              "link": "browseProgramSortAndGroup",
+              "filterContentLink": "app/browse/view/templates/program/browse-program-sorting-grouping.html",
+              "title": "Sorting & Grouping"
+          },
+          "fieldset": {
+              "link": "browseProgramFieldSet",
+              "filterContentLink": "app/browse/view/templates/program/browse-program-field-set.html",
+              "title": "Field Set"
+          }
+      },
+      "browseBy" : {
+          "select": {
+              "tag.type:movie": "Movie",
+              "tag.type:seriesmaster": "TV Series",
+              "tag.type:episode": "Episode",
+              "tag.type:musicvideo": "Music Video",
+              "tag.type:concert": "Concert",
+              "tag.type:sportingevent": "Sporting Event",
+              "tag.type:preview": "Preview",
+              "tag.type:minisode": "Minisode",
+              "tag.type:advertisement": "Advertisement",
+              "tag.type:extra": "Extra",
+              "tag.type:other": "Other"
+          },
+          "value": [ "tag.type:movie" ]
+      },
+      "restopt": {
+          "endpoint": {
+              "param": "restEndpoint"
+          },
+          "schema": {
+              "param": "schema"
+          },
+          "client": {
+              "param": "client"
+          },
+          "debug": {
+              "label": "Show Debug Info",
+              "status": false,
+              "param": "debug",
+              "value": "true"
+          },
+          "ars": {
+              "param": "ars",
+              "method": "POST"
+          },
+          "paging": {
+              "param": "items.paging",
+              "start": 1,
+              "count": 10,
+              "pagination": false,
+              "paginationStart": 1,
+              "paginationEnd": 10
+          },
+          "additionalRestParams": {
+              "label": "Additional Params",
+              "value": "",
+              "param": "additionalRestParams"
+          },
+          "overridenQueryString": {
+              "label": "Query Override",
+              "value": "",
+              "param": ""
+          }
+      },
+      "sources": {
+          "enableVOD": {
+              "status": true,
+              "atag": "vod$8875744356864243110",
+              "defaultAtag": "vod$8875744356864243110",
+              "atagPrefix": "vod",
+              "param": "user.atags",
+              "title": "Enable VOD",
+              "inputTitle": "Availability Tag",
+              "filter": "catalog.type:vod"
+          },
+          "enableTVList": {
+              "status": true,
+              "atag": "linear$7444042768941558110",
+              "defaultAtag": "linear$7444042768941558110",
+              "atagPrefix": "linear",
+              "param": "user.atags",
+              "title": "Enable TV Listings",
+              "inputTitle": "Availability Tag",
+              "filter": "catalog.type:linear"
+          },
+          "enableTVECatalog": {
+              "status": false,
+              "title": "Enable TVE Catalog",
+              "filter": "catalog.type:tve"
+          },
+          "enableDeviceId": {
+              "status": false,
+              "param": "device.id",
+              "title": "Enable Device ID",
+              "inputTitle": "Device ID",
+              "value": "comcast:xbo:deviceId:50475374"
+          },
+          "enableAccountId": {
+              "status": false,
+              "param": "account.id",
+              "title": "Enable Account ID",
+              "inputTitle": "Account ID",
+              "value": "comcast:xbo:accountId:5394310"
+          },
+          "enableETags": {
+              "status": false,
+              "param": "user.etags",
+              "title": "Enable Entitlement Tags",
+              "inputTitle": "Entitlement Tags",
+              "value": "vod$8559324935520996141"
+          },
+          "enableMoltId": {
+              "status": false,
+              "param": "molt.id",
+              "title": "Enable MOLT ID",
+              "inputTitle": "MOLT ID",
+              "value": ""
+          },
+          "enableMenuId": {
+              "status": false,
+              "param": "menu.id",
+              "title": "Enable Menu ID",
+              "inputTitle": "Menu ID",
+              "value": ""
+          },
+          "enableProgramId": {
+              "status": false,
+              "param": "id",
+              "title": "Enable Program ID",
+              "inputTitle": "Program ID",
+              "value": ""
+          },
+          "enableImageId": {
+              "status": true,
+              "param": "filter.image.gid",
+              "title": "Enable Image group ID/IDs",
+              "inputTitle": "Image group ID/IDs",
+              "value": "9218902759746521161,8580885346555644161,7020167223608802161,7171039184798784161"
+          },
+          "enableEditorialCollection": {
+              "status": false,
+              "param": "c.id",
+              "title": "Enable Editorial Collection",
+              "inputTitle": "Collection ID",
+              "select": {
+                  "s": "Simple",
+                  "h": "Hybrid" },
+              "value": "",
+              "selectValue": "s",
+              "selectTitle": "Mode",
+              "selectParam": "c.mode"
+          }
+      },
+      "sortingAndGrouping": {
+          "program": {
+              "param": "entity.sort",
+              "title": "Program Sort",
+              "select": {
+                  "browse": "Browse",
+                  "alpha.ASC": "Alphabetic",
+                  "alpha.DESC": "Alphabetic (DESC)",
+                  "releaseyear.ASC": "Release Year",
+                  "releaseyear.DESC": "Release Year (DESC)",
+                  "entity": "Entity",
+                  "personalizedbrowse": "Personalized Browse",
+                  "molt": "MOLT",
+                  "editorial": "Editorial",
+                  "airtime": "Airtime"
+              }
+          },
+          "episode": {
+              "param": "episode.sort",
+              "title": "Episode Sort",
+              "multiple": true,
+              "select": {
+                  "seasonnumber.ASC": "Season Number",
+                  "seasonnumber.DESC": "Season Number (DESC)",
+                  "episodenumber.ASC": "Episode Number",
+                  "episodenumber.DESC": "Episode Number (DESC)",
+                  "year.ASC": "Year",
+                  "year.DESC": "Year (DESC)",
+                  "originalairdate.ASC": "Original Airdate",
+                  "originalairdate.DESC": "Original Airdate (DESC)"
+              }
+          },
+          "vod": {
+              "param": "showings.sort.vod",
+              "title": "VOD Sort",
+              "select": {
+                  "price.DESC": "Price (DESC)",
+                  "price.ASC": "Price",
+                  "format.DESC": "Format (DESC)",
+                  "format.ASC": "Format",
+                  "window.start.DESC": "Window Start (DESC)",
+                  "window.start.ASC": "Window Start",
+                  "window.end.DESC": "Window End (DESC)",
+                  "window.end.ASC": "Window End"
+              }
+          },
+          "linear": {
+              "param": "showings.sort.linear",
+              "title": "Linear Sort",
+              "multiple": true,
+              "select": {
+                  "window.start.ASC": "Window Start",
+                  "window.start.DESC": "Window Start (DESC)",
+                  "window.end.ASC": "Window End",
+                  "window.end.DESC": "Window End (DESC)",
+                  "format.ASC": "Format",
+                  "format.DESC": "Format (DESC)"
+              }
+          }
+      },
+      "fields": {
+          "program": {
+              "title": "Program",
+              "param": "fields",
+              "multiple": true,
+              "select": {
+                  "all": { "label": "All", "param": "program.all" },
+                  "id": { "label": "ID", "param": "program.id" },
+                  "title": { "label": "Title", "param": "program.title" },
+                  "synopsis": { "label": "Synopsis", "param": "program.synopsis" },
+                  "year": { "label": "Year", "paraml": "program.year" },
+                  "language": { "label": "Language", "param": "program.language" },
+                  "programType": { "label": "Program Type", "param": "program.programtype" },
+                  "parentId": { "label": "Parent ID", "param": "program.parentid" },
+                  "seasonNumber": { "label": "Season Number", "param": "program.seasonnumber" },
+                  "episodeNumber": { "label": "Episode Number", "param": "program.episodenumber" },
+                  "seriesEpisodeNumber": { "label": "Series Episode Number", "param": "program.episodenumber" },
+                  "duration": { "label": "Duration", "param": "program.duration" },
+                  "audience": { "label": "Audience", "param": "program.audience" },
+                  "rating": { "label": "Rating", "param": "program.rating" },
+                  "starrating": { "label": "Star Rating", "param": "program.starrating" },
+                  "category": { "label": "Category", "param": "program.category" },
+                  "tags": { "label": "Tags", "param": "program.tags" },
+                  "originalairdate": { "label": "Original Air Date", "param": "program.originalairdate" },
+                  "images": { "label": "Images", "param": "program.images" }
+              },
+              "status": true,
+              "value": [ "program.all" ]
+          },
+          "episode": {
+              "title": "Episode",
+              "param": "fields",
+              "multiple": true,
+              "select": {
+                  "all": { "label": "All", "param": "episode.all" },
+                  "kind": { "label": "Kind", "param": "episode.kind" },
+                  "language": { "label": "Language", "param": "episode.language" },
+                  "duration": { "label": "Duration", "param": "episode.duration" },
+                  "year": { "label": "Year", "param": "episode.year" },
+                  "tags": { "label": "Tags", "param": "episode.tags" },
+                  "audience": { "label": "Audience", "param": "episode.audience" },
+                  "starRating": { "label": "Star Rating", "param": "episode.starRating" },
+                  "synopsis": { "label": "Synopsis", "param": "episode.synopsis" },
+                  "title": { "label": "Title", "param": "episode.title" },
+                  "partNumber": { "label": "Part Number", "param": "episode.partNumber" },
+                  "totalParts": { "label": "Total Parts", "param": "episode.totalParts" },
+                  "showings": { "label": "Showings", "param": "episode.showings" },
+                  "images": { "label": "Images", "param": "episode.images" },
+                  "programType": { "label": "Program Type", "param": "episode.programType" },
+                  "programId": { "label": "Program ID", "param": "episode.programId" },
+                  "score": { "label": "Score", "param": "episode.score" },
+                  "episodeTitle": { "label": "Episode Title", "param": "episode.episodeTitle" },
+                  "tvSeasonEpisodeNumber": { "label": "TV Season Episode Number", "param": "episode.tvSeasonEpisodeNumber" },
+                  "tvSeasonNumber": { "label": "TV Season Number", "param": "episode.tvSeasonNumber" },
+                  "seriesEpisodeNumber": { "label": "Series Episode Number", "param": "episode.seriesEpisodeNumber" },
+                  "seriesId": { "label": "Series ID", "param": "episode.seriesId" },
+                  "sportsSubtitle": { "label": "Sports Subtitle", "param": "episode.sportsSubtitle" },
+                  "ratings": { "label": "Ratings", "param": "episode.ratings" },
+                  "originalAirDate": { "label": "Original Air Date", "param": "episode.originalAirDate" }
+              }
+          },
+          "showing": {
+              "title": "Showing",
+              "param": "fields",
+              "multiple": true,
+              "select": {
+                  "all": { "label": "All", "param": "showing.all" },
+                  "kind": { "label": "Kind", "param": "showing.kind" },
+                  "hd": { "label": "HD", "param": "showing.hd" },
+                  "threeD": { "label": "3D", "param": "showing.threeD" },
+                  "price": { "label": "Price", "param": "showing.price" },
+                  "audioType": { "label": "Audio Type", "param": "showing.audioType" },
+                  "trickModesRestricted": { "label": "Trick Modes Restricted", "param": "showing.trickModesRestricted" },
+                  "newUntil": { "label": "New Until", "param": "showing.newUntil" },
+                  "lastChanceFrom": { "label": "Last Chance From", "param": "showing.lastChanceFrom" },
+                  "expirationDate": { "label": "Expiration Date", "param": "showing.expirationDate" },
+                  "entitlementIds": { "label": "Entitlement IDs", "param": "showing.entitlementIds" },
+                  "purchaseable": { "label": "Purchaseable", "param": "showing.purchaseable" },
+                  "ultraviolet": { "label": "Ultraviolet", "param": "showing.ultraviolet" },
+                  "mediaGuid": { "label": "Media GUID", "param": "showing.mediaGuid" },
+                  "mediaAccountName": { "label": "Media Account Name", "param": "showing.mediaAccountName" },
+                  "mediaContent": { "label": "Media Content", "param": "showing.mediaContent" },
+                  "programId": { "label": "Program ID", "param": "showing.programId" },
+                  "rating": { "label": "Rating", "param": "showing.rating" },
+                  "cc": { "label": "CC", "param": "showing.cc" },
+                  "dvs ": { "label": "DVS", "param": "showing.dvs" },
+                  "providerCompanyId ": { "label": "Provider Company ID", "param": "showing.providerCompanyId" },
+                  "productContextIds ": { "label": "Product Context IDs", "param": "showing.productContextIds" },
+                  "productContextTypes ": { "label": "Product Context Types", "param": "showing.productContextTypes" }
+              }
+          },
+          "showings": {
+              "title": "Showings",
+              "param": "showings",
+              "external": true,
+              "value": "2",
+              "select": {
+                  "1": { "label": "1", "param": "1" },
+                  "2": { "label": "2", "param": "2" },
+                  "3": { "label": "3", "param": "3" },
+                  "4": { "label": "4", "param": "4" },
+                  "5": { "label": "5", "param": "5" },
+                  "All": { "label": "All", "param": "All" }
+              }
+          },
+          "vodShowing": {
+              "title": "VOD Showings",
+              "param": "showings.vod",
+              "external": true,
+              "value": "2",
+              "select": {
+                  "1": { "label": "1", "param": "1" },
+                  "2": { "label": "2", "param": "2" },
+                  "3": { "label": "3", "param": "3" },
+                  "4": { "label": "4", "param": "4" },
+                  "5": { "label": "5", "param": "5" },
+                  "All": { "label": "All", "param": "All" }
+              }
+          },
+          "linearShowing": {
+              "title": "Linear Showings",
+              "param": "showings.linear",
+              "external": true,
+              "value": "2",
+              "select": {
+                  "1": { "label": "1", "param": "1" },
+                  "2": { "label": "2", "param": "2" },
+                  "3": { "label": "3", "param": "3" },
+                  "4": { "label": "4", "param": "4" },
+                  "5": { "label": "5", "param": "5" },
+                  "All": { "label": "All", "param": "All" }
+              }
+          },
+          "odolShowing": {
+              "title": "Playnow Showings",
+              "param": "showings.odol",
+              "external": true,
+              "value": "2",
+              "select": {
+                  "1": { "label": "1", "param": "1" },
+                  "2": { "label": "2", "param": "2" },
+                  "3": { "label": "3", "param": "3" },
+                  "4": { "label": "4", "param": "4" },
+                  "5": { "label": "5", "param": "5" },
+                  "All": { "label": "All", "param": "All" }
+              }
+          },
+          "tveShowing": {
+              "title": "TVE Showings",
+              "param": "showings.tve",
+              "external": true,
+              "value": "2",
+              "select": {
+                  "1": { "label": "1", "param": "1" },
+                  "2": { "label": "2", "param": "2" },
+                  "3": { "label": "3", "param": "3" },
+                  "4": { "label": "4", "param": "4" },
+                  "5": { "label": "5", "param": "5" },
+                  "All": { "label": "All", "param": "All" }
+              }
+          }
+      },
+      "filters": {
+          "coreFilters" : {
+              "label": "Core Filters",
+              "param": "coreFilters",
+              "filtersGroup": {
+                  "audience": {
+                      "label": "Audience",
+                      "status": false,
+                      "selectOperator": {
+                          "AND": "AND",
+                          "AND NOT": "NOT"
+                      },
+                      "valueOperator": "AND",
+                      "multiple": true,
+                      "select": {
+                          "kids":"Kids",
+                          "adult":"Adult",
+                          "all":"All"
+                      },
+                      "value": [ "kids" ],
+                      "innerOperator": {
+                          "AND": "AND",
+                          "OR": "OR",
+                          "AND NOT": "NOT"
+                      },
+                      "innerOperatorValue": "OR",
+                      "param":"tag.audience:"
+                  },
+                  "language": {
+                      "label": "Language",
+                      "status": false,
+                      "selectOperator": {
+                          "AND": "AND",
+                          "AND NOT": "NOT"
+                      },
+                      "valueOperator": "AND",
+                      "multiple": true,
+                      "select": {
+                          "eng":"English",
+                          "spa":"Spanish",
+                          "ita":"Italian"
+                      },
+                      "value": [ "eng" ],
+                      "innerOperator": {
+                          "AND": "AND",
+                          "OR": "OR",
+                          "AND NOT": "NOT"
+                      },
+                      "innerOperatorValue": "OR",
+                      "param":"tag.language:"
+                  },
+                  "titleStartCharacter": {
+                      "label": "Title Start Character",
+                      "status": false,
+                      "selectOperator": {
+                          "AND": "AND",
+                          "AND NOT": "NOT"
+                      },
+                      "valueOperator": "AND",
+                      "rangeFilter": true,
+                      "value": {
+                          "from": "@",
+                          "to": "z"
+                      },
+                      "param":"titleStart:"
+                  }
+              }
+          },
+          "tagFilters": {
+              "label": "Tag Filters",
+              "param": "tagFilters",
+              "filtersGroup": {
+                  "personId": {
+                      "label": "Person ID",
+                      "status": false,
+                      "selectOperator": {
+                          "AND": "AND",
+                          "AND NOT": "NOT"
+                      },
+                      "valueOperator": "AND",
+                      "value": "",
+                      "param": "tag.id.person:m$",
+                      "subvalue": {
+                          "role": {
+                              "label": "Role",
+                              "status": false,
+                              "select": {
+                                  "actor": "Actor",
+                                  "director": "Director"
+                              },
+                              "value": "actor"
+                          }
+                      }
+                  },
+                  "companyId": {
+                      "label": "Company ID",
+                      "status": false,
+                      "selectOperator": {
+                          "AND": "AND",
+                          "AND NOT": "NOT"
+                      },
+                      "valueOperator": "AND",
+                      "value": "",
+                      "param": "tag.id.company:"
+                  },
+                  "companyType": {
+                      "label": "Company Type",
+                      "status": false,
+                      "selectOperator": {
+                          "AND": "AND",
+                          "AND NOT": "NOT"
+                      },
+                      "valueOperator": "AND",
+                      "value": "",
+                      "param": "tag.id.companyType:"
+                  },
+                  "teamId": {
+                      "label": "Team ID",
+                      "status": false,
+                      "selectOperator": {
+                          "AND": "AND",
+                          "AND NOT": "NOT"
+                      },
+                      "valueOperator": "AND",
+                      "value": "",
+                      "param": "tag.id.team:m$"
+                  },
+                  "providerId": {
+                      "label": "Provider ID",
+                      "status": false,
+                      "selectOperator": {
+                          "AND": "AND",
+                          "AND NOT": "NOT"
+                      },
+                      "valueOperator": "AND",
+                      "value": "",
+                      "param": "tag.id.provider:"
+                  }
+              }
+          },
+          "pricingFilters": {
+              "label": "Pricing Filters",
+              "param": "pricingFilters",
+              "filtersGroup":{
+                  "price": {
+                      "label": "Price",
+                      "status": false,
+                      "selectOperator": {
+                          "AND": "AND",
+                          "AND NOT": "NOT"
+                      },
+                      "valueOperator": "AND",
+                      "rangeFilter": true,
+                      "value": {
+                          "from": "",
+                          "to": ""
+                      },
+                      "param":"price:"
+                  }
+              }
+          },
+          "ratingsFilters": {
+              "label": "Ratings Filters",
+              "param": "ratingsFilters",
+              "filtersGroup":{
+                  "audienceRating" : {
+                      "label": "Audience Rating",
+                      "status": false,
+                      "selectOperator": {
+                          "AND": "AND",
+                          "AND NOT": "NOT"
+                      },
+                      "valueOperator": "AND",
+                      "multiple": true,
+                      "select": {
+                          "mpaa$nr": "mpaa$nr",
+                          "mpaa$r": "mpaa$r",
+                          "mpaa$pg": "mpaa$pg",
+                          "mpaa$pg-13": "mpaa$pg-13",
+                          "mpaa$g": "mpaa$g",
+                          "mpaa$adult": "mpaa$adult",
+                          "mpaa$nc-17": "mpaa$nc-17",
+                          "tv$nr": "tv$nr",
+                          "tv$tvpg": "tv$tvpg",
+                          "tv$tv14": "tv$tv14",
+                          "tv$tvma": "tv$tvma",
+                          "tv$tvy": "tv$tvy",
+                          "tv$tvy7": "tv$tvy7"
+                      },
+                      "value": [],
+                      "innerOperator": {
+                          "AND": "AND",
+                          "OR": "OR",
+                          "AND NOT": "NOT"
+                      },
+                      "innerOperatorValue": "OR",
+                      "param":"tag.rating:"
+                  },
+                  "starRating": {
+                      "label": "Star Rating",
+                      "status": false,
+                      "selectOperator": {
+                          "AND": "AND",
+                          "AND NOT": "NOT"
+                      },
+                      "valueOperator": "AND",
+                      "rangeFilter": true,
+                      "value": {
+                          "from": "",
+                          "to": ""
+                      },
+                      "param":"tag.starRating:"
+                  }
+              }
+          },
+          "showingFilters": {
+              "label": "Showing Filters",
+              "param": "showingFilters",
+              "filtersGroup":{
+                  "videoFormat": {
+                      "label": "Video Format",
+                      "status": false,
+                      "selectOperator": {
+                          "AND": "AND"
+                      },
+                      "valueOperator": "AND",
+                      "multiple": true,
+                      "select": {
+                          "hd":"HD",
+                          "sd":"SD",
+                          "3d":"3D"
+                      },
+                      "value": [],
+                      "innerOperator": {
+                          "AND": "AND",
+                          "OR": "OR"
+                      },
+                      "innerOperatorValue": "OR",
+                      "param":"video.format:"
+                  },
+                  "airtype": {
+                      "label": "Air Type",
+                      "status": false,
+                      "selectOperator": {
+                          "AND": "AND",
+                          "AND NOT": "NOT"
+                      },
+                      "valueOperator": "AND",
+                      "multiple": true,
+                      "select": {
+                          "live": "Live",
+                          "new": "NEW",
+                          "repeat": "Repeat",
+                          "taped": "Taped"
+                      },
+                      "value": [ "live" ],
+                      "innerOperator": {
+                          "AND": "AND",
+                          "OR": "OR",
+                          "AND NOT": "NOT"
+                      },
+                      "innerOperatorValue": "OR",
+                      "param": "tag.airtype:"
+                  },
+                  "new": {
+                      "label": "New",
+                      "status": false,
+                      "valueOperator": "AND",
+                      "select": {
+                          "true": "True",
+                          "false": "False"
+                      },
+                      "value": "true",
+                      "param":"tag.new:"
+                  },
+                  "cc": {
+                      "label": "CC",
+                      "status": false,
+                      "valueOperator": "AND",
+                      "select": {
+                          "true": "True",
+                          "false": "False"
+                      },
+                      "value": "true",
+                      "param":"cc:"
+                  },
+                  "dvs": {
+                      "label": "DVS",
+                      "status": false,
+                      "valueOperator": "AND",
+                      "select": {
+                          "true": "True",
+                          "false": "False"
+                      },
+                      "value": "true",
+                      "param":"dvs:"
+                  },
+                  "sap": {
+                      "label": "SAP",
+                      "status": false,
+                      "valueOperator": "AND",
+                      "select": {
+                          "true": "True",
+                          "false": "False"
+                      },
+                      "value": "true",
+                      "param":"sap:"
+                  }
+              }
+          },
+          "timeFilters": {
+              "label": "Time Filters",
+              "param": "timeFilters",
+              "filtersGroup": {
+                  "releaseYear": {
+                      "label": "Release Year",
+                      "status": false,
+                      "selectOperator": {
+                          "AND": "AND",
+                          "AND NOT": "NOT"
+                      },
+                      "valueOperator": "AND",
+                      "rangeFilter": true,
+                      "value": {
+                          "from": "",
+                          "to": ""
+                      },
+                      "param":"releaseYear:"
+                  },
+                  "windowStart": {
+                      "label": "Window Start",
+                      "status": false,
+                      "selectOperator": {
+                          "AND": "AND",
+                          "AND NOT": "NOT"
+                      },
+                      "valueOperator": "AND",
+                      "dateFilter": true,
+                      "valueStartDate": {
+                          "from": "",
+                          "to": ""
+                      },
+                      "value": {
+                          "from": "date",
+                          "to": "date"
+                      },
+                      "param":"window.start:"
+                  },
+                  "windowEnd": {
+                      "label": "Window End",
+                      "status": false,
+                      "selectOperator": {
+                          "AND": "AND",
+                          "AND NOT": "NOT"
+                      },
+                      "valueOperator": "AND",
+                      "dateFilter": true,
+                      "valueEndDate": {
+                          "from": "",
+                          "to": ""
+                      },
+                      "value": {
+                          "from": "date",
+                          "to": "date"
+                      },
+                      "param":"window.end:"
+                  }
+              }
+          },
+          "otherFilters" : {
+              "label": "Other Filters",
+              "param": "otherFilters",
+              "filtersGroup": {
+                  "free": {
+                      "label": "Free",
+                      "status": false,
+                      "valueOperator": "AND",
+                      "select": {
+                          "true": "True",
+                          "false": "False"
+                      },
+                      "value": "true",
+                      "param":"tag.free:"
+                  },
+                  "entityTags": {
+                      "label": "Entity Tags",
+                      "status": false,
+                      "selectOperator": {
+                          "AND": "AND",
+                          "AND NOT": "NOT"
+                      },
+                      "valueOperator": "AND",
+                      "value": "",
+                      "param": "entity.tags:"
+                  },
+                  "encoding" : {
+                      "label": "Encoding",
+                      "status": false,
+                      "selectOperator": {
+                          "AND": "AND",
+                          "AND NOT": "NOT"
+                      },
+                      "valueOperator": "AND",
+                      "multiple": true,
+                      "select": {
+                          "ism": "ISM",
+                          "m3u": "M3U",
+                          "f4m": "F4M",
+                          "mpeg_qam": "MPEG_QAM"
+                      },
+                      "value": [],
+                      "innerOperator": {
+                          "AND": "AND",
+                          "OR": "OR",
+                          "AND NOT": "NOT"
+                      },
+                      "innerOperatorValue": "OR",
+                      "param":"tag.encoding:"
+                  },
+                  "offer" : {
+                      "label": "Offer",
+                      "status": false,
+                      "selectOperator": {
+                          "AND": "AND",
+                          "AND NOT": "NOT"
+                      },
+                      "valueOperator": "AND",
+                      "multiple": true,
+                      "select": {
+                          "buy": "buy",
+                          "all": "all"
+                      },
+                      "value": [ "buy" ],
+                      "innerOperator": {
+                          "AND": "AND",
+                          "OR": "OR",
+                          "AND NOT": "NOT"
+                      },
+                      "innerOperatorValue": "OR",
+                      "param":"offer:"
+                  },
+
+                  "productContext": {
+                      "label": "Product Context",
+                      "status": false,
+                      "selectOperator": {
+                          "AND": "AND",
+                          "AND NOT": "NOT"
+                      },
+                      "valueOperator": "AND",
+                      "value": "8004164956865758110",
+                      "param":"tag.id.productContext:"
+                  },
+                  "editionalCollection": {
+                      "label": "Editional Collection",
+                      "status": false,
+                      "selectOperator": {
+                          "AND": "AND",
+                          "AND NOT": "NOT"
+                      },
+                      "valueOperator": "AND",
+                      "value": "",
+                      "param":"tag.id.ec:m$"
+                  },
+                  "entitlementTag" : {
+                      "label": "Entitlement Tag",
+                      "status": false,
+                      "selectOperator": {
+                          "AND": "AND",
+                          "AND NOT": "NOT"
+                      },
+                      "valueOperator": "AND",
+                      "multiple": true,
+                      "select": {
+                          "free": "Free",
+                          "sub": "Sub"
+                      },
+                      "value": ["free", "sub"],
+                      "innerOperator": {
+                          "AND": "AND",
+                          "OR": "OR",
+                          "AND NOT": "NOT"
+                      },
+                      "innerOperatorValue": "OR",
+                      "param":"tag.entitlement:"
+                  }
+              }
+          },
+          "filterOverride": {
+              "label": "Filter Override",
+              "value": ""
+          }
+      }
+    },
+    "browseCollections": {
+        "templates": {
+            "restoption": {
+                "link": "browseCollectionsRestOption",
+                "filterContentLink": "app/browse/view/templates/collections/browse-collections-rest-opt.html",
+                "title": "REST Options"
+            },
+            "ars": {
+                "link": "browseCollectionsArs",
+                "filterContentLink": "app/browse/view/templates/collections/browse-collections-ars.html",
+                "title": "ARS"
+            },
+            "sources": {
+                "link": "browseCollectionsSources",
+                "filterContentLink": "app/browse/view/templates/collections/browse-collections-sources.html",
+                "title": "Sources"
+            },
+            "filters": {
+                "link": "browseCollectionsFilters",
+                "filterContentLink": "app/browse/view/templates/collections/browse-collections-filters.html",
+                "title": "Filters"
+            },
+            "sortandgroup": {
+                "link": "browseCollectionsSortAndGroup",
+                "filterContentLink": "app/browse/view/templates/collections/browse-collections-sorting-grouping.html",
+                "title": "Sorting & Grouping"
+            },
+            "fieldset": {
+                "link": "browseCollectionsFieldSet",
+                "filterContentLink": "app/browse/view/templates/collections/browse-collections-field-set.html",
+                "title": "Field Set"
+            }
+        },
+        "browseBy" : {
+            "select": {
+                "tag.type:movie": "Movie",
+                "tag.type:seriesmaster": "TV Series",
+                "tag.type:episode": "Episode",
+                "tag.type:musicvideo": "Music Video",
+                "tag.type:concert": "Concert",
+                "tag.type:sportingevent": "Sporting Event",
+                "tag.type:preview": "Preview",
+                "tag.type:minisode": "Minisode",
+                "tag.type:advertisement": "Advertisement",
+                "tag.type:extra": "Extra",
+                "tag.type:other": "Other"
+            },
+            "value": []
+        },
+        "restopt": {
+            "endpoint": {
+                "param": "restEndpoint"
+            },
+            "schema": {
+                "param": "schema"
+            },
+            "client": {
+                "param": "client"
+            },
+            "debug": {
+                "label": "Show Debug Info",
+                "status": false,
+                "param": "debug",
+                "value": "true"
+            },
+            "ars": {
+                "param": "ars",
+                "method": "POST"
+            },
+            "paging": {
+                "param": "items.paging",
+                "start": 1,
+                "count": 10,
+                "pagination": false,
+                "paginationStart": 1,
+                "paginationRange": 10
+            },
+            "additionalRestParams": {
+                "label": "Additional Params",
+                "value": "",
+                "param": "additionalRestParams"
+            },
+            "overridenQueryString": {
+                "label": "Query Override",
+                "value": "",
+                "param": ""
+            }
+        },
+        "sources": {
+            "enableVOD": {
+                "status": true,
+                "atag": "vod$8875744356864243110",
+                "defaultAtag": "vod$8875744356864243110",
+                "atagPrefix": "vod",
+                "param": "user.atags",
+                "title": "Enable VOD",
+                "inputTitle": "Availability Tag",
+                "filter": "catalog.type:vod"
+            },
+            "enableTVList": {
+                "status": true,
+                "atag": "linear$7444042768941558110",
+                "defaultAtag": "linear$7444042768941558110",
+                "atagPrefix": "linear",
+                "param": "user.atags",
+                "title": "Enable TV Listings",
+                "inputTitle": "Availability Tag",
+                "filter": "catalog.type:linear"
+            },
+            "enableODOLCatalog": {
+                "status": false,
+                "title": "Enable ODOL Catalog",
+                "select": {
+                    "catalog.type:odol.ipad":"Ipad",
+                    "catalog.type:odol.xfinitytv":"Xfinitytv",
+                    "catalog.type:odol.android":"Android"
+                },
+                "filter": "catalog.type:odol.ipad"
+            },
+            "enableDeviceId": {
+                "status": false,
+                "param": "device.id",
+                "title": "Enable Device ID",
+                "inputTitle": "Device ID",
+                "value": "comcast:xbo:deviceId:50475374"
+            },
+            "enableAccountId": {
+                "status": false,
+                "param": "account.id",
+                "title": "Enable Account ID",
+                "inputTitle": "Account ID",
+                "value": "comcast:xbo:accountId:5394310"
+            },
+            "enableProgramId": {
+                "status": false,
+                "param": "program.id",
+                "title": "Enable Program ID",
+                "inputTitle": "Program ID",
+                "value": "8714466974728299112"
+            },
+            "enableMenuId": {
+                "status": false,
+                "param": "menu.id",
+                "title": "Enable Menu ID",
+                "inputTitle": "Menu ID",
+                "value": ""
+            },
+            "enableImageId": {
+                "status": true,
+                "param": "filter.image.gid",
+                "title": "Enable Image group ID/IDs",
+                "inputTitle": "Image group ID/IDs",
+                "value": "9218902759746521161,8580885346555644161,7020167223608802161,7171039184798784161"
+            },
+            "enableEditorialCollection": {
+                "status": true,
+                "param": "id",
+                "title": "Enable Editorial Collection",
+                "inputTitle": "Collection ID",
+                "select": {
+                    "s": "Simple",
+                    "h": "Hybrid" },
+                "value": "7737045666172324170,6882783266691473170",
+                "selectValue": "s",
+                "selectTitle": "Mode",
+                "selectParam": "c.mode"
+            }
+        },
+        "sortingAndGrouping": {
+            "program": {
+                "param": "entity.sort",
+                "title": "Program Sort",
+                "select": {
+                    "browse": "Browse",
+                    "alpha.ASC": "Alphabetic",
+                    "alpha.DESC": "Alphabetic (DESC)",
+                    "releaseyear.ASC": "Release Year",
+                    "releaseyear.DESC": "Release Year (DESC)",
+                    "entity": "Entity",
+                    "personalizedbrowse": "Personalized Browse",
+                    "molt": "MOLT",
+                    "editorial": "Editorial",
+                    "airtime": "Airtime"
+                }
+            },
+            "episode": {
+                "param": "episode.sort",
+                "title": "Episode Sort",
+                "multiple": true,
+                "select": {
+                    "seasonnumber.ASC": "Season Number",
+                    "seasonnumber.DESC": "Season Number (DESC)",
+                    "episodenumber.ASC": "Episode Number",
+                    "episodenumber.DESC": "Episode Number (DESC)",
+                    "year.ASC": "Year",
+                    "year.DESC": "Year (DESC)",
+                    "originalairdate.ASC": "Original Airdate",
+                    "originalairdate.DESC": "Original Airdate (DESC)"
+                }
+            },
+            "vod": {
+                "param": "showings.sort.vod",
+                "title": "VOD Sort",
+                "select": {
+                    "price.DESC": "Price (DESC)",
+                    "price.ASC": "Price",
+                    "format.DESC": "Format (DESC)",
+                    "format.ASC": "Format",
+                    "window.start.DESC": "Window Start (DESC)",
+                    "window.start.ASC": "Window Start",
+                    "window.end.DESC": "Window End (DESC)",
+                    "window.end.ASC": "Window End"
+                }
+            },
+            "linear": {
+                "param": "showings.sort.linear",
+                "title": "Linear Sort",
+                "multiple": true,
+                "select": {
+                    "window.start.ASC": "Window Start",
+                    "window.start.DESC": "Window Start (DESC)",
+                    "window.end.ASC": "Window End",
+                    "window.end.DESC": "Window End (DESC)",
+                    "format.ASC": "Format",
+                    "format.DESC": "Format (DESC)"
+                }
+            }
+        },
+        "fields": {
+            "program": {
+                "title": "Program",
+                "param": "fields",
+                "multiple": true,
+                "select": {
+                    "all": { "label": "All", "param": "program.all" },
+                    "id": { "label": "ID", "param": "program.id" },
+                    "title": { "label": "Title", "param": "program.title" },
+                    "synopsis": { "label": "Synopsis", "param": "program.synopsis" },
+                    "year": { "label": "Year", "paraml": "program.year" },
+                    "language": { "label": "Language", "param": "program.language" },
+                    "programType": { "label": "Program Type", "param": "program.programtype" },
+                    "parentId": { "label": "Parent ID", "param": "program.parentid" },
+                    "seasonNumber": { "label": "Season Number", "param": "program.seasonnumber" },
+                    "episodeNumber": { "label": "Episode Number", "param": "program.episodenumber" },
+                    "seriesEpisodeNumber": { "label": "Series Episode Number", "param": "program.episodenumber" },
+                    "duration": { "label": "Duration", "param": "program.duration" },
+                    "audience": { "label": "Audience", "param": "program.audience" },
+                    "rating": { "label": "Rating", "param": "program.rating" },
+                    "starrating": { "label": "Star Rating", "param": "program.starrating" },
+                    "category": { "label": "Category", "param": "program.category" },
+                    "tags": { "label": "Tags", "param": "program.tags" },
+                    "originalairdate": { "label": "Original Air Date", "param": "program.originalairdate" },
+                    "images": { "label": "Images", "param": "program.images" }
+                },
+                "status": true,
+                "value": [ "program.all" ]
+            },
+            "episode": {
+                "title": "Episode",
+                "param": "fields",
+                "multiple": true,
+                "select": {
+                    "all": { "label": "All", "param": "episode.all" },
+                    "kind": { "label": "Kind", "param": "episode.kind" },
+                    "language": { "label": "Language", "param": "episode.language" },
+                    "duration": { "label": "Duration", "param": "episode.duration" },
+                    "year": { "label": "Year", "param": "episode.year" },
+                    "tags": { "label": "Tags", "param": "episode.tags" },
+                    "audience": { "label": "Audience", "param": "episode.audience" },
+                    "starRating": { "label": "Star Rating", "param": "episode.starRating" },
+                    "synopsis": { "label": "Synopsis", "param": "episode.synopsis" },
+                    "title": { "label": "Title", "param": "episode.title" },
+                    "partNumber": { "label": "Part Number", "param": "episode.partNumber" },
+                    "totalParts": { "label": "Total Parts", "param": "episode.totalParts" },
+                    "showings": { "label": "Showings", "param": "episode.showings" },
+                    "images": { "label": "Images", "param": "episode.images" },
+                    "programType": { "label": "Program Type", "param": "episode.programType" },
+                    "programId": { "label": "Program ID", "param": "episode.programId" },
+                    "score": { "label": "Score", "param": "episode.score" },
+                    "episodeTitle": { "label": "Episode Title", "param": "episode.episodeTitle" },
+                    "tvSeasonEpisodeNumber": { "label": "TV Season Episode Number", "param": "episode.tvSeasonEpisodeNumber" },
+                    "tvSeasonNumber": { "label": "TV Season Number", "param": "episode.tvSeasonNumber" },
+                    "seriesEpisodeNumber": { "label": "Series Episode Number", "param": "episode.seriesEpisodeNumber" },
+                    "seriesId": { "label": "Series ID", "param": "episode.seriesId" },
+                    "sportsSubtitle": { "label": "Sports Subtitle", "param": "episode.sportsSubtitle" },
+                    "ratings": { "label": "Ratings", "param": "episode.ratings" },
+                    "originalAirDate": { "label": "Original Air Date", "param": "episode.originalAirDate" }
+                }
+            },
+            "showing": {
+                "title": "Showing",
+                "param": "fields",
+                "multiple": true,
+                "select": {
+                    "all": { "label": "All", "param": "showing.all" },
+                    "kind": { "label": "Kind", "param": "showing.kind" },
+                    "hd": { "label": "HD", "param": "showing.hd" },
+                    "threeD": { "label": "3D", "param": "showing.threeD" },
+                    "price": { "label": "Price", "param": "showing.price" },
+                    "audioType": { "label": "Audio Type", "param": "showing.audioType" },
+                    "trickModesRestricted": { "label": "Trick Modes Restricted", "param": "showing.trickModesRestricted" },
+                    "newUntil": { "label": "New Until", "param": "showing.newUntil" },
+                    "lastChanceFrom": { "label": "Last Chance From", "param": "showing.lastChanceFrom" },
+                    "expirationDate": { "label": "Expiration Date", "param": "showing.expirationDate" },
+                    "entitlementIds": { "label": "Entitlement IDs", "param": "showing.entitlementIds" },
+                    "purchaseable": { "label": "Purchaseable", "param": "showing.purchaseable" },
+                    "ultraviolet": { "label": "Ultraviolet", "param": "showing.ultraviolet" },
+                    "mediaGuid": { "label": "Media GUID", "param": "showing.mediaGuid" },
+                    "mediaAccountName": { "label": "Media Account Name", "param": "showing.mediaAccountName" },
+                    "mediaContent": { "label": "Media Content", "param": "showing.mediaContent" },
+                    "programId": { "label": "Program ID", "param": "showing.programId" },
+                    "rating": { "label": "Rating", "param": "showing.rating" },
+                    "cc": { "label": "CC", "param": "showing.cc" },
+                    "dvs ": { "label": "DVS", "param": "showing.dvs" },
+                    "providerCompanyId ": { "label": "Provider Company ID", "param": "showing.providerCompanyId" },
+                    "productContextIds ": { "label": "Product Context IDs", "param": "showing.productContextIds" },
+                    "productContextTypes ": { "label": "Product Context Types", "param": "showing.productContextTypes" }
+                },
+                "status": true,
+                "value": [ "showing.all" ]
+            },
+            "showings": {
+                "title": "Showings",
+                "param": "showings",
+                "external": true,
+                "value": "2",
+                "select": {
+                    "1": { "label": "1", "param": "1" },
+                    "2": { "label": "2", "param": "2" },
+                    "3": { "label": "3", "param": "3" },
+                    "4": { "label": "4", "param": "4" },
+                    "5": { "label": "5", "param": "5" },
+                    "All": { "label": "All", "param": "All" }
+                }
+            },
+            "vodShowing": {
+                "title": "VOD Showings",
+                "param": "showings.vod",
+                "external": true,
+                "value": "2",
+                "select": {
+                    "1": { "label": "1", "param": "1" },
+                    "2": { "label": "2", "param": "2" },
+                    "3": { "label": "3", "param": "3" },
+                    "4": { "label": "4", "param": "4" },
+                    "5": { "label": "5", "param": "5" },
+                    "All": { "label": "All", "param": "All" }
+                }
+            },
+            "linearShowing": {
+                "title": "Linear Showings",
+                "param": "showings.linear",
+                "external": true,
+                "value": "2",
+                "select": {
+                    "1": { "label": "1", "param": "1" },
+                    "2": { "label": "2", "param": "2" },
+                    "3": { "label": "3", "param": "3" },
+                    "4": { "label": "4", "param": "4" },
+                    "5": { "label": "5", "param": "5" },
+                    "All": { "label": "All", "param": "All" }
+                }
+            },
+            "odolShowing": {
+                "title": "Playnow Showings",
+                "param": "showings.odol",
+                "external": true,
+                "value": "2",
+                "select": {
+                    "1": { "label": "1", "param": "1" },
+                    "2": { "label": "2", "param": "2" },
+                    "3": { "label": "3", "param": "3" },
+                    "4": { "label": "4", "param": "4" },
+                    "5": { "label": "5", "param": "5" },
+                    "All": { "label": "All", "param": "All" }
+                }
+            },
+            "tveShowing": {
+                "title": "TVE Showings",
+                "param": "showings.tve",
+                "external": true,
+                "value": "2",
+                "select": {
+                    "1": { "label": "1", "param": "1" },
+                    "2": { "label": "2", "param": "2" },
+                    "3": { "label": "3", "param": "3" },
+                    "4": { "label": "4", "param": "4" },
+                    "5": { "label": "5", "param": "5" },
+                    "All": { "label": "All", "param": "All" }
+                }
+            }
+        },
+        "filters": {
+            "coreFilters" : {
+                "label": "Core Filters",
+                "param": "coreFilters",
+                "filtersGroup": {
+                    "audience": {
+                        "label": "Audience",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "valueOperator": "AND",
+                        "multiple": true,
+                        "select": {
+                            "kids": "Kids",
+                            "adult":"Adult",
+                            "all":"All"
+                        },
+                        "value": [ "all" ],
+                        "innerOperator": {
+                            "AND": "AND",
+                            "OR": "OR",
+                            "AND NOT": "NOT"
+                        },
+                        "innerOperatorValue": "OR",
+                        "param":"tag.audience:"
+                    },
+                    "language": {
+                        "label": "Language",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "valueOperator": "AND",
+                        "select": {
+                            "eng":"English",
+                            "spa":"Spanish",
+                            "ita":"Italian"
+                        },
+                        "value": [ "eng" ],
+                        "multiple": true,
+                        "innerOperator": {
+                            "AND": "AND",
+                            "OR": "OR",
+                            "AND NOT": "NOT"
+                        },
+                        "innerOperatorValue": "OR",
+                        "param":"tag.language:"
+                    },
+                    "titleStartCharacter": {
+                        "label": "Title Start Character",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "valueOperator": "AND",
+                        "rangeFilter": true,
+                        "value": {
+                            "from": "@",
+                            "to": "z"
+                        },
+                        "param":"titleStart:"
+                    }
+                }
+            },
+            "tagFilters": {
+                "label": "Tag Filters",
+                "param": "tagFilters",
+                "filtersGroup": {
+                    "personId": {
+                        "label": "Person ID",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "valueOperator": "AND",
+                        "value": "",
+                        "param": "tag.id.person:m$",
+                        "subvalue": {
+                            "role": {
+                                "label": "Role",
+                                "status": false,
+                                "select": {
+                                    "actor": "Actor",
+                                    "director": "Director"
+                                },
+                                "value": "actor"
+                            }
+                        }
+                    },
+                    "id": {
+                        "label": "ID",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "valueOperator": "AND",
+                        "select": {
+                            "iTheme": "iTheme",
+                            "NativeITheme": "NativeITheme",
+                            "Keyword": "Keyword",
+                            "kidsTheme": "kidsTheme",
+                            "genre": "genre",
+                            "theme": "theme",
+                            "music": "music",
+                            "country": "country",
+                            "category": "category",
+                            "tone": "tone",
+                            "company": "company",
+                            "type": "type",
+                            "artisticStyle": "artisticStyle",
+                            "ratingFlag": "ratingFlag"
+                        },
+                        "value": "iTheme",
+                        "param":"tag.id:m$"
+                    },
+                    "companyId": {
+                        "label": "Company ID",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "valueOperator": "AND",
+                        "value": "",
+                        "param": "tag.id.company:"
+                    },
+                    "teamId": {
+                        "label": "Team ID",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "valueOperator": "AND",
+                        "value": "",
+                        "param": "tag.id.team:m$"
+                    },
+                    "providerId": {
+                        "label": "Provider ID",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "valueOperator": "AND",
+                        "value": "",
+                        "param": "tag.id.provider:"
+                    },
+                    "entitlementTag" : {
+                        "label": "Entitlement Tag",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND"
+                        },
+                        "valueOperator": "AND",
+                        "multiple": true,
+                        "select": {
+                            "free": "Free",
+                            "sub": "Sub"
+                        },
+                        "value": ["free", "sub"],
+                        "innerOperator": {
+                            "AND": "AND",
+                            "OR": "OR"
+                        },
+                        "innerOperatorValue": "OR",
+                        "param":"tag.entitlement:"
+                    }
+                }
+            },
+            "ratingsFilters": {
+                "label": "Ratings Filters",
+                "param": "ratingsFilters",
+                "filtersGroup":{
+                    "audienceRating" : {
+                        "label": "Audience Rating",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "valueOperator": "AND",
+                        "multiple": true,
+                        "select": {
+                            "mpaa$nr": "mpaa$nr",
+                            "mpaa$r": "mpaa$r",
+                            "mpaa$pg": "mpaa$pg",
+                            "mpaa$pg-13": "mpaa$pg-13",
+                            "mpaa$g": "mpaa$g",
+                            "mpaa$adult": "mpaa$adult",
+                            "mpaa$nc-17": "mpaa$nc-17",
+                            "tv$nr": "tv$nr",
+                            "tv$tvpg": "tv$tvpg",
+                            "tv$tv14": "tv$tv14",
+                            "tv$tvma": "tv$tvma",
+                            "tv$tvy": "tv$tvy",
+                            "tv$tvy7": "tv$tvy7"
+                        },
+                        "value": [],
+                        "innerOperator": {
+                            "AND": "AND",
+                            "OR": "OR",
+                            "AND NOT": "NOT"
+                        },
+                        "innerOperatorValue": "OR",
+                        "param":"tag.rating:"
+                    },
+                    "starRating": {
+                        "label": "Star Rating",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "valueOperator": "AND",
+                        "rangeFilter": true,
+                        "value": {
+                            "from": "",
+                            "to": ""
+                        },
+                        "param":"tag.starRating:"
+                    }
+                }
+            },
+            "timeFilters": {
+                "label": "Time Filters",
+                "param": "timeFilters",
+                "filtersGroup": {
+                    "windowStart": {
+                        "label": "Window Start",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND"
+                        },
+                        "valueOperator": "AND",
+                        "valueStartDate": "",
+                        "value": "date",
+                        "param":"window.start:"
+                    },
+                    "windowEnd": {
+                        "label": "Window End",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND"
+                        },
+                        "valueOperator": "AND",
+                        "valueEndDate": "",
+                        "value": "date",
+                        "param":"window.end:"
+                    },
+                    "releaseYear": {
+                        "label": "Release Year",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "valueOperator": "AND",
+                        "rangeFilter": true,
+                        "value": {
+                            "from": "",
+                            "to": ""
+                        },
+                        "param":"releaseYear:"
+                    }
+                }
+            },
+            "showingFilters": {
+                "label": "Showing Filters",
+                "param": "showingFilters",
+                "filtersGroup":{
+                    "sdhd": {
+                        "label": "SD/HD",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND"
+                        },
+                        "valueOperator": "AND",
+                        "multiple": true,
+                        "select": {
+                            "sd":"SD",
+                            "hd":"HD"
+                        },
+                        "value": [ "sd","hd" ],
+                        "innerOperator": {
+                            "AND": "AND",
+                            "OR": "OR"
+                        },
+                        "innerOperatorValue": "OR",
+                        "param":"video.format:"
+                    },
+                    "threeD": {
+                        "label": "3D",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND"
+                        },
+                        "valueOperator": "AND",
+                        "select": {
+                            "true": "True",
+                            "false": "False"
+                        },
+                        "value": "true",
+                        "param": "threed:"
+                    },
+                    "new": {
+                        "label": "New",
+                        "status": false,
+                        "valueOperator": "AND",
+                        "select": {
+                            "true": "True",
+                            "false": "False"
+                        },
+                        "value": "true",
+                        "param":"tag.new:"
+                    },
+                    "cc": {
+                        "label": "CC",
+                        "status": false,
+                        "valueOperator": "AND",
+                        "select": {
+                            "true": "True",
+                            "false": "False"
+                        },
+                        "value": "true",
+                        "param":"cc:"
+                    },
+                    "dvs": {
+                        "label": "DVS",
+                        "status": false,
+                        "valueOperator": "AND",
+                        "select": {
+                            "true": "True",
+                            "false": "False"
+                        },
+                        "value": "true",
+                        "param":"dvs:"
+                    },
+                    "sap": {
+                        "label": "SAP",
+                        "status": false,
+                        "valueOperator": "AND",
+                        "select": {
+                            "true": "True",
+                            "false": "False"
+                        },
+                        "value": "true",
+                        "param":"sap:"
+                    },
+                    "free": {
+                        "label": "Free",
+                        "status": false,
+                        "valueOperator": "AND",
+                        "select": {
+                            "true": "True",
+                            "false": "False"
+                        },
+                        "value": "true",
+                        "param":"tag.free:"
+                    },
+                    "encoding" : {
+                        "label": "Encoding",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "valueOperator": "AND",
+                        "multiple": true,
+                        "select": {
+                            "ism": "ISM",
+                            "m3u": "M3U",
+                            "f4m": "F4M",
+                            "mpeg_qam": "MPEG_QAM"
+                        },
+                        "value": ["ism"],
+                        "innerOperator": {
+                            "AND": "AND",
+                            "OR": "OR"
+                        },
+                        "innerOperatorValue": "OR",
+                        "param":"tag.encoding:"
+                    },
+                    "seasonumber": {
+                        "label": "Season Number",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "valueOperator": "AND",
+                        "rangeFilter": true,
+                        "value": {
+                            "from": "",
+                            "to": ""
+                        },
+                        "param":"seasonumber:"
+                    }
+                }
+            },
+            "pricingFilters": {
+                "label": "Pricing Filters",
+                "param": "pricingFilters",
+                "filtersGroup":{
+                    "free": {
+                        "label": "Free",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND"
+                        },
+                        "valueOperator": "AND",
+                        "rangeFilter": true,
+                        "value": {
+                            "from": "0",
+                            "to": "2.99"
+                        },
+                        "param":"price:"
+                    }
+                }
+            },
+            "otherFilters" : {
+                "label": "Other Filters",
+                "param": "otherFilters",
+                "filtersGroup": {
+                    "cFilter": {
+                        "label": "Custom Filter",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND"
+                        },
+                        "valueOperator": "AND",
+                        "customFilter": true,
+                        "additionalParam":"p.",
+                        "param":"<PARAM>",
+                        "value": "<VALUE>"
+                    }
+                }
+            },
+            "filterOverride": {
+                "label": "Filter Override",
+                "value": ""
+            }
+        }
+    },
+    "browseStation": {
+        "templates": {
+            "restoption": {
+                "link": "browseStationRestOption",
+                "filterContentLink": "app/browse/view/templates/station/browse-station-rest-opt.html",
+                "title": "REST Options"
+            },
+            "sources": {
+                "link": "browseStationSources",
+                "filterContentLink": "app/browse/view/templates/station/browse-station-sources.html",
+                "title": "Sources"
+            },
+            "filters": {
+                "link": "browseStationFilters",
+                "filterContentLink": "app/browse/view/templates/station/browse-station-filters.html",
+                "title": "Filters"
+            },
+            "fieldset": {
+                "link": "browseStationFieldSet",
+                "filterContentLink": "app/browse/view/templates/station/browse-station-field-set.html",
+                "title": "Field Set"
+            }
+        },
+        "browseBy" : {
+            "select": {
+                "tag.type:station": "Station"
+            },
+            "value": [ "tag.type:station" ]
+        },
+        "restopt": {
+            "endpoint": {
+                "param": "restEndpoint"
+            },
+            "schema": {
+                "param": "schema"
+            },
+            "paging": {
+                "param": "items.paging",
+                "start": 1,
+                "count": 10,
+                "pagination": false,
+                "paginationStart": 1,
+                "paginationRange": 10
+            },
+            "additionalRestParams": {
+                "label": "Additional Params",
+                "value": "",
+                "param": "additionalRestParams"
+            },
+            "overridenQueryString": {
+                "label": "Query Override",
+                "value": "",
+                "param": ""
+            }
+        },
+        "sources": {
+            "enableVOD": {
+                "status": true,
+                "atag": "vod$8875744356864243110",
+                "defaultAtag": "vod$8875744356864243110",
+                "atagPrefix": "vod",
+                "param": "user.atags",
+                "title": "Enable VOD",
+                "inputTitle": "Availability Tag",
+                "filter": "catalog.type:vod"
+            },
+            "enableTVList": {
+                "status": true,
+                "atag": "linear$7444042768941558110",
+                "defaultAtag": "linear$7444042768941558110",
+                "atagPrefix": "linear",
+                "param": "user.atags",
+                "title": "Enable TV Listings",
+                "inputTitle": "Availability Tag",
+                "filter": "catalog.type:linear"
+            },
+            "enableODOLCatalog": {
+                "status": false,
+                "title": "Enable ODOL Catalog",
+                "select": {
+                    "catalog.type:odol.ipad":"Ipad",
+                    "catalog.type:odol.xfinitytv":"Xfinitytv",
+                    "catalog.type:odol.android":"Android"
+                },
+                "filter": "catalog.type:odol.ipad"
+            },
+            "enableImageId": {
+                "status": true,
+                "param": "filter.image.gid",
+                "title": "Enable Image group ID/IDs",
+                "inputTitle": "Image group ID/IDs",
+                "value": "9218902759746521161,8580885346555644161,7020167223608802161,7171039184798784161"
+            }
+        },
+        "fields": {
+            "station": {
+                "title": "Station",
+                "param": "fields",
+                "multiple": true,
+                "select": {
+                    "channels": { "label": "Channels", "param": "station.channels" },
+                    "all": { "label": "All", "param": "station.all" }
+                },
+                "status": true,
+                "value": [ "station.channels" ]
+            },
+            "program": {
+                "title": "Program",
+                "param": "fields",
+                "multiple": true,
+                "select": {
+                    "all": { "label": "All", "param": "program.all" },
+                    "id": { "label": "ID", "param": "program.id" },
+                    "title": { "label": "Title", "param": "program.title" },
+                    "synopsis": { "label": "Synopsis", "param": "program.synopsis" },
+                    "year": { "label": "Year", "paraml": "program.year" },
+                    "language": { "label": "Language", "param": "program.language" },
+                    "programType": { "label": "Program Type", "param": "program.programtype" },
+                    "parentId": { "label": "Parent ID", "param": "program.parentid" },
+                    "seasonNumber": { "label": "Season Number", "param": "program.seasonnumber" },
+                    "episodeNumber": { "label": "Episode Number", "param": "program.episodenumber" },
+                    "seriesEpisodeNumber": { "label": "Series Episode Number", "param": "program.episodenumber" },
+                    "duration": { "label": "Duration", "param": "program.duration" },
+                    "audience": { "label": "Audience", "param": "program.audience" },
+                    "rating": { "label": "Rating", "param": "program.rating" },
+                    "starrating": { "label": "Star Rating", "param": "program.starrating" },
+                    "category": { "label": "Category", "param": "program.category" },
+                    "tags": { "label": "Tags", "param": "program.tags" },
+                    "originalairdate": { "label": "Original Air Date", "param": "program.originalairdate" },
+                    "images": { "label": "Images", "param": "program.images" }
+                },
+                "value": [ "program.all" ]
+            },
+            "episode": {
+                "title": "Episode",
+                "param": "fields",
+                "multiple": true,
+                "select": {
+                    "all": { "label": "All", "param": "episode.all" },
+                    "kind": { "label": "Kind", "param": "episode.kind" },
+                    "language": { "label": "Language", "param": "episode.language" },
+                    "duration": { "label": "Duration", "param": "episode.duration" },
+                    "year": { "label": "Year", "param": "episode.year" },
+                    "tags": { "label": "Tags", "param": "episode.tags" },
+                    "audience": { "label": "Audience", "param": "episode.audience" },
+                    "starRating": { "label": "Star Rating", "param": "episode.starRating" },
+                    "synopsis": { "label": "Synopsis", "param": "episode.synopsis" },
+                    "title": { "label": "Title", "param": "episode.title" },
+                    "partNumber": { "label": "Part Number", "param": "episode.partNumber" },
+                    "totalParts": { "label": "Total Parts", "param": "episode.totalParts" },
+                    "showings": { "label": "Showings", "param": "episode.showings" },
+                    "images": { "label": "Images", "param": "episode.images" },
+                    "programType": { "label": "Program Type", "param": "episode.programType" },
+                    "programId": { "label": "Program ID", "param": "episode.programId" },
+                    "score": { "label": "Score", "param": "episode.score" },
+                    "episodeTitle": { "label": "Episode Title", "param": "episode.episodeTitle" },
+                    "tvSeasonEpisodeNumber": { "label": "TV Season Episode Number", "param": "episode.tvSeasonEpisodeNumber" },
+                    "tvSeasonNumber": { "label": "TV Season Number", "param": "episode.tvSeasonNumber" },
+                    "seriesEpisodeNumber": { "label": "Series Episode Number", "param": "episode.seriesEpisodeNumber" },
+                    "seriesId": { "label": "Series ID", "param": "episode.seriesId" },
+                    "sportsSubtitle": { "label": "Sports Subtitle", "param": "episode.sportsSubtitle" },
+                    "ratings": { "label": "Ratings", "param": "episode.ratings" },
+                    "originalAirDate": { "label": "Original Air Date", "param": "episode.originalAirDate" }
+                },
+                "value": [ "episode.all" ]
+            },
+            "showing": {
+                "title": "Showing",
+                "param": "fields",
+                "multiple": true,
+                "select": {
+                    "all": { "label": "All", "param": "showing.all" },
+                    "kind": { "label": "Kind", "param": "showing.kind" },
+                    "hd": { "label": "HD", "param": "showing.hd" },
+                    "threeD": { "label": "3D", "param": "showing.threeD" },
+                    "price": { "label": "Price", "param": "showing.price" },
+                    "audioType": { "label": "Audio Type", "param": "showing.audioType" },
+                    "trickModesRestricted": { "label": "Trick Modes Restricted", "param": "showing.trickModesRestricted" },
+                    "newUntil": { "label": "New Until", "param": "showing.newUntil" },
+                    "lastChanceFrom": { "label": "Last Chance From", "param": "showing.lastChanceFrom" },
+                    "expirationDate": { "label": "Expiration Date", "param": "showing.expirationDate" },
+                    "entitlementIds": { "label": "Entitlement IDs", "param": "showing.entitlementIds" },
+                    "purchaseable": { "label": "Purchaseable", "param": "showing.purchaseable" },
+                    "ultraviolet": { "label": "Ultraviolet", "param": "showing.ultraviolet" },
+                    "mediaGuid": { "label": "Media GUID", "param": "showing.mediaGuid" },
+                    "mediaAccountName": { "label": "Media Account Name", "param": "showing.mediaAccountName" },
+                    "mediaContent": { "label": "Media Content", "param": "showing.mediaContent" },
+                    "programId": { "label": "Program ID", "param": "showing.programId" },
+                    "rating": { "label": "Rating", "param": "showing.rating" },
+                    "cc": { "label": "CC", "param": "showing.cc" },
+                    "dvs ": { "label": "DVS", "param": "showing.dvs" },
+                    "providerCompanyId ": { "label": "Provider Company ID", "param": "showing.providerCompanyId" },
+                    "productContextIds ": { "label": "Product Context IDs", "param": "showing.productContextIds" },
+                    "productContextTypes ": { "label": "Product Context Types", "param": "showing.productContextTypes" }
+                },
+                "value": [ "showing.all" ]
+            },
+            "showings": {
+                "title": "Showings",
+                "param": "showings",
+                "external": true,
+                "value": "2",
+                "select": {
+                    "1": { "label": "1", "param": "1" },
+                    "2": { "label": "2", "param": "2" },
+                    "3": { "label": "3", "param": "3" },
+                    "4": { "label": "4", "param": "4" },
+                    "5": { "label": "5", "param": "5" },
+                    "All": { "label": "All", "param": "All" }
+                }
+            },
+            "vodShowing": {
+                "title": "VOD Showings",
+                "param": "showings.vod",
+                "external": true,
+                "value": "2",
+                "select": {
+                    "1": { "label": "1", "param": "1" },
+                    "2": { "label": "2", "param": "2" },
+                    "3": { "label": "3", "param": "3" },
+                    "4": { "label": "4", "param": "4" },
+                    "5": { "label": "5", "param": "5" },
+                    "All": { "label": "All", "param": "All" }
+                }
+            },
+            "linearShowing": {
+                "title": "Linear Showings",
+                "param": "showings.linear",
+                "external": true,
+                "value": "2",
+                "select": {
+                    "1": { "label": "1", "param": "1" },
+                    "2": { "label": "2", "param": "2" },
+                    "3": { "label": "3", "param": "3" },
+                    "4": { "label": "4", "param": "4" },
+                    "5": { "label": "5", "param": "5" },
+                    "All": { "label": "All", "param": "All" }
+                }
+            },
+            "odolShowing": {
+                "title": "Playnow Showings",
+                "param": "showings.odol",
+                "external": true,
+                "value": "2",
+                "select": {
+                    "1": { "label": "1", "param": "1" },
+                    "2": { "label": "2", "param": "2" },
+                    "3": { "label": "3", "param": "3" },
+                    "4": { "label": "4", "param": "4" },
+                    "5": { "label": "5", "param": "5" },
+                    "All": { "label": "All", "param": "All" }
+                }
+            },
+            "tveShowing": {
+                "title": "TVE Showings",
+                "param": "showings.tve",
+                "external": true,
+                "value": "2",
+                "select": {
+                    "1": { "label": "1", "param": "1" },
+                    "2": { "label": "2", "param": "2" },
+                    "3": { "label": "3", "param": "3" },
+                    "4": { "label": "4", "param": "4" },
+                    "5": { "label": "5", "param": "5" },
+                    "All": { "label": "All", "param": "All" }
+                }
+            }
+        },
+        "filters": {
+            "coreFilters" : {
+                "label": "Core Filters",
+                "param": "coreFilters",
+                "filtersGroup": {
+                    "audience": {
+                        "label": "Audience",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "valueOperator": "AND",
+                        "multiple": true,
+                        "select": {
+                            "adult":"Adult",
+                            "all":"All"
+                        },
+                        "value": [ "all" ],
+                        "innerOperator": {
+                            "AND": "AND",
+                            "OR": "OR",
+                            "AND NOT": "NOT"
+                        },
+                        "innerOperatorValue": "OR",
+                        "param":"tag.audience:"
+                    }
+                }
+            },
+            "tagFilters": {
+                "label": "Tag Filters",
+                "param": "tagFilters",
+                "filtersGroup": {
+                    "companyId": {
+                        "label": "Company ID",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "valueOperator": "AND",
+                        "value": "",
+                        "param": "tag.id.company:"
+                    }
+                }
+            },
+            "timeFilters": {
+                "label": "Time Filters",
+                "param": "timeFilters",
+                "filtersGroup": {
+                    "windowStart": {
+                        "label": "Window Start",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND"
+                        },
+                        "valueOperator": "AND",
+                        "valueStartDate": "",
+                        "value": "date",
+                        "param":"window.start:"
+                    },
+                    "windowEnd": {
+                        "label": "Window End",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND"
+                        },
+                        "valueOperator": "AND",
+                        "valueEndDate": "",
+                        "value": "date",
+                        "param":"window.end:"
+                    }
+                }
+            },
+            "filterOverride": {
+                "label": "Filter Override",
+                "value": ""
+            }
+        }
+    },
+    "browseTeam": {
+        "templates": {
+            "restoption": {
+                "link": "browseTeamRestOption",
+                "filterContentLink": "app/browse/view/templates/team/browse-team-rest-opt.html",
+                "title": "REST Options"
+            },
+            "ars": {
+                "link": "browseTeamArs",
+                "filterContentLink": "app/browse/view/templates/team/browse-team-ars.html",
+                "title": "ARS"
+            },
+            "sources": {
+                "link": "browseTeamSources",
+                "filterContentLink": "app/browse/view/templates/team/browse-team-sources.html",
+                "title": "Sources"
+            },
+            "filters": {
+                "link": "browseTeamFilters",
+                "filterContentLink": "app/browse/view/templates/team/browse-team-filters.html",
+                "title": "Filters"
+            },
+            "sortandgroup": {
+                "link": "browseTeamSortAndGroup",
+                "filterContentLink": "app/browse/view/templates/team/browse-team-sorting-grouping.html",
+                "title": "Sorting & Grouping"
+            },
+            "fieldset": {
+                "link": "browseTeamFieldSet",
+                "filterContentLink": "app/browse/view/templates/team/browse-team-field-set.html",
+                "title": "Field Set"
+            }
+        },
+        "browseBy" : {
+            "select": {
+                "tag.type:team": "Team"
+            },
+            "value": [ "tag.type:team" ]
+        },
+        "restopt": {
+            "endpoint": {
+                "param": "restEndpoint"
+            },
+            "schema": {
+                "param": "schema"
+            },
+            "client": {
+                "param": "client"
+            },
+            "debug": {
+                "label": "Show Debug Info",
+                "status": false,
+                "param": "debug",
+                "value": "true"
+            },
+            "ars": {
+                "param": "ars",
+                "method": "POST"
+            },
+            "paging": {
+                "param": "items.paging",
+                "start": 1,
+                "count": 10,
+                "pagination": false,
+                "paginationStart": 1,
+                "paginationRange": 10
+            },
+            "additionalRestParams": {
+                "label": "Additional Params",
+                "value": "",
+                "param": "additionalRestParams"
+            },
+            "overridenQueryString": {
+                "label": "Query Override",
+                "value": "",
+                "param": ""
+            }
+        },
+        "sources": {
+            "enableVOD": {
+                "status": true,
+                "atag": "vod$8875744356864243110",
+                "defaultAtag": "vod$8875744356864243110",
+                "atagPrefix": "vod",
+                "param": "user.atags",
+                "title": "Enable VOD",
+                "inputTitle": "Availability Tag",
+                "filter": "catalog.type:vod"
+            },
+            "enableTVList": {
+                "status": true,
+                "atag": "linear$7444042768941558110",
+                "defaultAtag": "linear$7444042768941558110",
+                "atagPrefix": "linear",
+                "param": "user.atags",
+                "title": "Enable TV Listings",
+                "inputTitle": "Availability Tag",
+                "filter": "catalog.type:linear"
+            },
+            "enableDeviceId": {
+                "status": false,
+                "param": "device.id",
+                "title": "Enable Device ID",
+                "inputTitle": "Device ID",
+                "value": "comcast:xbo:deviceId:50475374"
+            },
+            "enableAccountId": {
+                "status": false,
+                "param": "account.id",
+                "title": "Enable Account ID",
+                "inputTitle": "Account ID",
+                "value": "comcast:xbo:accountId:5394310"
+            },
+            "enableMenuId": {
+                "status": false,
+                "param": "menu.id",
+                "title": "Enable Menu ID",
+                "inputTitle": "Menu ID",
+                "value": ""
+            },
+            "enableImageId": {
+                "status": true,
+                "param": "filter.image.gid",
+                "title": "Enable Image group ID/IDs",
+                "inputTitle": "Image group ID/IDs",
+                "value": "9218902759746521161,8580885346555644161,7020167223608802161,7171039184798784161"
+            }
+        },
+        "sortingAndGrouping": {
+            "program": {
+                "param": "entity.sort",
+                "title": "Program Sort",
+                "select": {
+                    "alpha.ASC": "Alphabetic"
+                },
+                "status": true,
+                "sort": "alpha.ASC"
+            }
+        },
+        "fields": {
+            "program": {
+                "title": "Team",
+                "param": "fields",
+                "multiple": true,
+                "select": {
+                    "all": { "label": "All", "param": "team.all" }
+                },
+                "status": true,
+                "value": [ "team.all" ]
+            }
+        },
+        "filters": {
+            "coreFilters" : {
+                "label": "Core Filters",
+                "param": "coreFilters",
+                "filtersGroup": {
+                    "language": {
+                        "label": "Language",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "valueOperator": "AND",
+                        "select": {
+                            "eng":"English",
+                            "spa":"Spanish",
+                            "ita":"Italian"
+                        },
+                        "value": [ "eng" ],
+                        "multiple": true,
+                        "innerOperator": {
+                            "AND": "AND",
+                            "OR": "OR",
+                            "AND NOT": "NOT"
+                        },
+                        "innerOperatorValue": "OR",
+                        "param":"tag.language:"
+                    },
+                    "titleStartCharacter": {
+                        "label": "Title Start Character",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND"
+                        },
+                        "valueOperator": "AND",
+                        "rangeFilter": true,
+                        "value": {
+                            "from": "@",
+                            "to": "z"
+                        },
+                        "param":"titleStart:"
+                    }
+                }
+            },
+            "tagFilters": {
+                "label": "Tag Filters",
+                "param": "tagFilters",
+                "filtersGroup": {
+                    "personId": {
+                        "label": "Person ID",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "valueOperator": "AND",
+                        "value": "",
+                        "param": "tag.id.person:m$",
+                        "subvalue": {
+                            "role": {
+                                "label": "Role",
+                                "status": false,
+                                "select": {
+                                    "actor": "Actor",
+                                    "director": "Director"
+                                },
+                                "value": "actor"
+                            }
+                        }
+                    }
+                }
+            },
+            "teamFilters": {
+                "label": "Team Filters",
+                "param": "teamFilters",
+                "filtersGroup":{
+                    "gender": {
+                        "label": "Gender",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND"
+                        },
+                        "valueOperator": "AND",
+                        "select": {
+                            "male":"Male",
+                            "female":"Female"
+                        },
+                        "value": "male",
+                        "param":"tag.gender:"
+                    },
+                    "sport": {
+                        "label": "Sport",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND"
+                        },
+                        "valueOperator": "AND",
+                        "param":"tag.id.sport:"
+                    },
+                    "organization": {
+                        "label": "Organization",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND"
+                        },
+                        "valueOperator": "AND",
+                        "value": "6631220855234310119",
+                        "param":"tag.id.organization:"
+                    },
+                    "league": {
+                        "label": "League",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND"
+                        },
+                        "valueOperator": "AND",
+                        "param":"tag.id.league:"
+                    },
+                    "conference": {
+                        "label": "Conference",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND"
+                        },
+                        "valueOperator": "AND",
+                        "param":"tag.id.conference:"
+                    }
+                }
+            },
+            "timeFilters": {
+                "label": "Time Filters",
+                "param": "timeFilters",
+                "filtersGroup": {
+                    "releaseYear": {
+                        "label": "Release Year",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND"
+                        },
+                        "valueOperator": "AND",
+                        "rangeFilter": true,
+                        "value": {
+                            "from": "",
+                            "to": ""
+                        },
+                        "param":"releaseYear:"
+                    }
+                }
+            },
+            "filterOverride": {
+                "label": "Filter Override",
+                "value": ""
+            }
+        }
+    },
+    "search": {
+        "templates": {
+            "restoption": {
+                "link": "searchRestOption",
+                "filterContentLink": "app/search/view/templates/search-rest-opt.html",
+                "title": "REST Options"
+            },
+            "sources": {
+                "link": "searchSources",
+                "filterContentLink": "app/search/view/templates/search-sources.html",
+                "title": "Sources"
+            },
+            "filters": {
+                "link": "searchFilters",
+                "filterContentLink": "app/search/view/templates/search-filters.html",
+                "title": "Filters"
+            },
+            "sortandgroup": {
+                "link": "searchSortAndGroup",
+                "filterContentLink": "app/search/view/templates/search-sorting-grouping.html",
+                "title": "Sorting & Grouping"
+            },
+            "fieldsopts": {
+                "link": "searchFieldsOpts",
+                "filterContentLink": "app/search/view/templates/search-field-opts.html",
+                "title": "Search Fields Options"
+            },
+            "fieldset": {
+                "link": "searchFieldSet",
+                "filterContentLink": "app/search/view/templates/search-field-set.html",
+                "title": "Field Set"
+            }
+        },
+        "searchBy" : {
+            "value": "",
+            "param": "q"
+        },
+        "restopt": {
+            "endpoint": {
+                "label": "REST Endpoint",
+                "param": "restEndpoint"
+            },
+            "schema": {
+                "label": "Schema",
+                "param": "schema"
+            },
+            "ars": {
+                "label": "ARS",
+                "status": false,
+                "param": "ars",
+                "method": "GET"
+            },
+            "rollupNetworks": {
+                "label": "Rollup Networks",
+                "status": false,
+                "param": "rollupChildren",
+                "select": {
+                    "true": true,
+                    "false": false
+                },
+                "value": "true"
+            },
+            "queryOperator": {
+                "label": "OR Token Search",
+                "status": false,
+                "param": "queryOperator",
+                "value": "OR"
+            },
+            "debug": {
+                "label": "Show Debug Info",
+                "status": false,
+                "param": "debug",
+                "value": "true"
+            },
+            "client": {
+                "label": "Client",
+                "param": "client"
+            },
+            "paging": {
+                "start": {
+                    "label": "Results Start",
+                    "param": "start",
+                    "value": 1,
+                    "paginationStart": 1
+                },
+                "count": {
+                    "label": "Results Count",
+                    "param": "returned",
+                    "value": 10,
+                    "paginationEnd": 10
+                },
+                "pagination": false
+            },
+            "additionalRestParams": {
+                "label": "Additional Params",
+                "value": "",
+                "param": "additionalRestParams"
+            },
+            "overridenQueryString": {
+                "label": "Query Override",
+                "value": "",
+                "param": ""
+            }
+        },
+        "sources": {
+          "enablePlayNow" : {
+            "status": false,
+            "label": "Enable Play Now",
+            "filter": {
+                "playNowDevice": {
+                    "label": "Play Now Device",
+                    "select": {
+                        "xfinitytv": "xfinitytv",
+                        "ipad": "ipad"
+                    },
+                    "param": "playnow.device:",
+                    "value": "xfinitytv"
+                },
+                "filterClips": {
+                    "status": false,
+                    "label": "Filter Clips",
+                    "param": "clips:",
+                    "value": "false"
+                }
+            }
+          },
+          "enableVOD" : {
+            "status": true,
+            "label": "Enable VOD",
+            "filter": {
+                "type": {
+                    "label": "Type",
+                    "select": {
+                        "udb.persona$": "Persona",
+                        "udb.mac$": "MAC Address",
+                        "merlin$": "Merlin"
+                    },
+                    "value": "udb.persona$",
+                    "subvalue": {
+                        "val": {
+                            "label": "Value",
+                            "selectedVal": ["udb.persona$", "udb.mac$","merlin$"],
+                            "value": "6099"
+                        }
+                      },
+                    "param" : "vod.location:"
+                    },
+                "cimWhitelist": {
+                    "status": false,
+                    "label": "CIM Whitelist",
+                    "value": "cim.persona$cim-whitelist",
+                    "param" : "vod.location:"
+                }
+            }
+          },
+          "enableTVList": {
+            "status": true,
+            "label": "Enable TV Listings",
+            "filter": {
+                "tvListings": {
+                    "label": "TV Listings",
+                    "select": {
+                        "ncds$": "NCDS",
+                        "rovi$": "Rovi",
+                        "merlin$": "Merlin",
+                        "vcw$": "VCW"
+                    },
+                    "value": "merlin$",
+                    "subvalue": {
+                        "tvListMerlinId": {
+                            "label": "Merlin ID",
+                            "selectedVal": ["merlin$"],
+                            "value": "7444042768941558110"
+                        },
+                        "controllerId": {
+                            "label": "Controller ID",
+                            "selectedVal": ["ncds$", "vcw$"],
+                            "value": "119"
+                        },
+                        "channelMapId": {
+                            "label": "Channel Map ID",
+                            "selectedVal": ["ncds$", "vcw$"],
+                            "value": "215"
+                        },
+                        "headEndId": {
+                            "label": "Head End Id",
+                            "selectedVal": ["rovi$"],
+                            "value": "13924"
+                        },
+                        "deviceType": {
+                            "label": "Device Type",
+                            "selectedVal": ["rovi$"],
+                            "value": "X"
+                        }
+                    },
+                    "param": "tvlisting.location:"
+                }
+            }
+          },
+          "enableColumbus": {
+            "status": false,
+            "label": "Enable Columbus",
+              "filter": {
+                  "encoding": {
+                      "label": "Encoding",
+                      "select": {
+                          "ISM": "ISM",
+                          "M3U": "M3U",
+                          "F4M": "F4M"
+                      },
+                      "param": "columbus.encoding:",
+                      "value": "ISM"
+                  },
+                  "columbusMerlinId": {
+                      "label": "Merlin ID",
+                      "param": "columbus.location:merlin$",
+                      "value": "5559937265859258110"
+                  }
+              }
+          },
+          "enableDeviceID": {
+            "status": false,
+            "label": "Enable Device ID",
+            "param": {
+              "deviceId": {
+                "label": "Device ID",
+                "param": "device.id",
+                "value": "comcast:xbo:deviceId:50475374"
+              }
+            }
+          },
+          "enableAccountID": {
+            "status": false,
+            "label": "Enable Account ID",
+            "param": {
+              "accountId": {
+                "label": "Account ID",
+                "param": "account.id",
+                "value": "comcast:xbo:accountId:5394310"
+              }
+            }
+          },
+          "enableUserID": {
+            "status": false,
+            "label": "Enable User ID",
+            "param": {
+              "userId": {
+                "label": "User ID",
+                "param": "user.id",
+                "value": "comcast:nstb:mac:12BE20BE2D42"
+              }
+            }
+          },
+          "enableEntitlementTags": {
+            "status": false,
+            "label": "Enable Entitlement Tags",
+            "param": {
+              "entitlementTagId": {
+                "label": "Entitlement Tags",
+                "param": "user.etags",
+                "value": "vod$8559324935520996141"
+              }
+            }
+          }
+        },
+        "sortingAndGrouping": {
+            "sorting": {
+                "label": "Sort By",
+                "param": "sort",
+                "select": {
+                    "":"",
+                    "relevance": "Relevance",
+                    "airtime": "Air Time",
+                    "-airtime": "Air Time (desc)",
+                    "alpha": "Alphabetic",
+                    "-alpha": "Alphabetic (desc)",
+                    "shuffle": "Shuffle"
+                },
+                "value": ""
+            },
+            "grouping": {
+                "label": "Grouping",
+                "param": "grouping",
+                "status": false,
+                "select": {
+                    "expandBranches": "Expand Branches",
+                    "flat": "Flat"
+                },
+                "value": "expandBranches"
+            }
+        },
+        "searchFields": {
+            "tags": {
+                "status": false,
+                "label": "Tags",
+                "param": "entity.tags"
+            },
+            "synonyms": {
+                "status": false,
+                "label": "Synonyms",
+                "param": "synonyms"
+            },
+            "title": {
+                "status": false,
+                "label": "Title",
+                "param": "title"
+            }
+        },
+        "fields": {
+            "credits": { "label": "Credits", "param": "credits", "status": true },
+            "default": { "label": "Default", "param": "default", "status": true },
+            "didYouMean": { "label": "Did You Mean", "param": "didyoumean", "status": false },
+            "entityTags": { "label": "Entity Tags", "param": "entity.tags", "status": true },
+            "firstLiveGShowing": { "label": "First Live G.Showing", "param": "firstLiveGameShowing", "status": false },
+            "firstShowing": { "label": "First Showing", "param": "firstShowing", "status": true },
+            "images": { "label": "Images", "param": "images", "status": true },
+            "language": { "label": "Language", "param": "language", "status": true },
+            "networkHighlighted": { "label": "Network Highlighted", "param": "networkaffiliation.highlighted", "status": false },
+            "rating": { "label": "Rating", "param": "rating", "status": false },
+            "ref": { "label": "Ref", "param": "ref", "status": false },
+            "rexGenre": { "label": "REX Genre", "param": "rex.genre", "status": false },
+            "seriesType": { "label": "REX Genre", "param": "seriestype", "status": false },
+            "startYear": { "label": "Start Year", "param": "startyear", "status": false },
+            "stationHighlighted": { "label": "Station Highlighted", "param": "stationname.highlighted", "status": false },
+            "suggest": { "label": "Suggest", "param": "suggest", "status": false },
+            "titleHighlighted": { "label": "Title Highlighted", "param": "title.highlighted", "status": false },
+            "waysToWatch": { "label": "Ways To Watch", "param": "waystowatch", "status": true }
+        },
+        "filters": {
+            "coreFilters" : {
+                "label": "Core Filters",
+                "param": "coreFilters",
+                "filtersGroup": {
+                    "audience": {
+                        "label": "Audience",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "valueOperator": "AND",
+                        "select": {
+                            "kids":"Kids",
+                            "adult":"Adult"
+                        },
+                        "value": "kids",
+                        "param":"audience:"
+                    },
+                    "entityType" : {
+                        "label": "Entity Type",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "multiple": true,
+                        "valueOperator": "AND",
+                        "select": {
+                            "sports":"sports",
+                            "sport":"sport",
+                            "league":"league",
+                            "sportsevent":"sportsevent",
+                            "team":"team",
+                            "person":"person",
+                            "network":"network",
+                            "genre":"genre",
+                            "topic":"topic",
+                            "program":"program",
+                            "movie":"movie",
+                            "series":"series",
+                            "company":"company",
+                            "shortcut":"shortcut",
+                            "SeriesMaster":"series master",
+                            "SportingEvent":"sporting event",
+                            "Preview":"preview",
+                            "Advertisement":"advertisement",
+                            "MusicVideo":"music video",
+                            "Minisode":"minisode",
+                            "Extra":"extra",
+                            "Concert":"concert"
+                        },
+                        "value": ["sports"],
+                        "innerOperator": {
+                            "AND": "AND",
+                            "OR": "OR",
+                            "AND NOT": "NOT"
+                        },
+                        "innerOperatorValue": "OR",
+                        "param":"entitytype:"
+                    }
+                }
+            },
+            "tagFilters": {
+                "label": "Tag Filters",
+                "param": "tagFilters",
+                "filtersGroup": {
+                    "companyId": {
+                        "label": "Company ID",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "valueOperator": "AND",
+                        "value": "7132458580137855105",
+                        "param": "tag.id.company:"
+                    },
+                    "entitlementTag" : {
+                        "label": "Entitlement Tag",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "valueOperator": "AND",
+                        "multiple": true,
+                        "select": {
+                            "free": "Free",
+                            "sub": "Sub"
+                        },
+                        "value": ["free", "sub"],
+                        "innerOperator": {
+                            "AND": "AND",
+                            "OR": "OR"
+                        },
+                        "innerOperatorValue": "OR",
+                        "param":"tag.entitlement:"
+                    }
+                }
+            },
+            "pricingFilters": {
+                "label": "Pricing Filters",
+                "param": "pricingFilters",
+                "filtersGroup":{
+                    "free": {
+                        "label": "Free",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND"
+                        },
+                        "valueOperator": "AND",
+                        "value": "0",
+                        "param":"price:"
+                    }
+                }
+            },
+            "showingFilters": {
+                "label": "Showing Filters",
+                "param": "showingFilters",
+                "filtersGroup": {
+                    "sdhd": {
+                        "label": "SD/HD",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND"
+                        },
+                        "valueOperator": "AND",
+                        "multiple": true,
+                        "select": {
+                            "sd":"SD",
+                            "hd":"HD"
+                        },
+                        "value": [ "sd","hd" ],
+                        "innerOperator": {
+                            "AND": "AND",
+                            "OR": "OR"
+                        },
+                        "innerOperatorValue": "OR",
+                        "param":"video.format:"
+                    },
+                    "threeD": {
+                        "label": "3D",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND"
+                        },
+                        "valueOperator": "AND",
+                        "select": {
+                            "true": "True",
+                            "false": "False"
+                        },
+                        "value": "true",
+                        "param": "threed:"
+                    },
+                    "dvs": {
+                        "label": "DVS",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND"
+                        },
+                        "valueOperator": "AND",
+                        "select": {
+                            "true": "True",
+                            "false": "False"
+                        },
+                        "value": "true",
+                        "param": "dvs:"
+                    },
+                    "airtype": {
+                        "label": "Air Type",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND"
+                        },
+                        "valueOperator": "AND",
+                        "select": {
+                            "live": "Live",
+                            "new": "NEW"
+                        },
+                        "value": "live",
+                        "param": "airtype:"
+                    }
+                }
+            },
+            "timeFilters": {
+                "label": "Time Filters",
+                "param": "timeFilters",
+                "filtersGroup": {
+                    "windowStart": {
+                        "label": "Window Start",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND"
+                        },
+                        "valueOperator": "AND",
+                        "valueStartDate": "",
+                        "value": "date",
+                        "param":"window.start:"
+                    },
+                    "windowEnd": {
+                        "label": "Window End",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND"
+                        },
+                        "valueOperator": "AND",
+                        "valueEndDate": "",
+                        "value": "date",
+                        "param":"window.end:"
+                    }
+                }
+            },
+            "otherFilters" : {
+                "label": "Other Filters",
+                "param": "otherFilters",
+                "filtersGroup": {
+                    "encoding" : {
+                        "label": "Encoding",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "valueOperator": "AND",
+                        "multiple": true,
+                        "select": {
+                            "ism": "ISM",
+                            "m3u": "M3U",
+                            "f4m": "F4M",
+                            "mpeg_qam": "MPEG_QAM"
+                        },
+                        "value": ["ism"],
+                        "innerOperator": {
+                            "AND": "AND",
+                            "OR": "OR"
+                        },
+                        "innerOperatorValue": "OR",
+                        "param":"tag.encoding:"
+                    },
+                    "offer" : {
+                        "label": "Offer",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND"
+                        },
+                        "valueOperator": "AND",
+                        "select": {
+                            "buy": "buy",
+                            "all": "all"
+                        },
+                        "value": "buy",
+                        "param": "offer:"
+                    }
+                }
+            },
+          "filterOverride": {
+              "label": "Filter Override",
+              "value": ""
+          }
+        }
+    },
+    "recommendations": {
+        "templates": {
+            "restoption": {
+                "link": "recommendRestOption",
+                "filterContentLink": "app/recommendations/view/templates/recommend-rest-opt.html",
+                "title": "REST Options"
+            },
+            "sources": {
+                "link": "recommendSources",
+                "filterContentLink": "app/recommendations/view/templates/recommend-sources.html",
+                "title": "Sources"
+            },
+            "filters": {
+                "link": "recommendFilters",
+                "filterContentLink": "app/recommendations/view/templates/recommend-filters.html",
+                "title": "Filters"
+            },
+            "sortandgroup": {
+                "link": "recommendSortAndGroup",
+                "filterContentLink": "app/recommendations/view/templates/recommend-sorting-grouping.html",
+                "title": "Sorting & Grouping"
+            },
+            "fieldsopts": {
+                "link": "recommendFieldsOpts",
+                "filterContentLink": "app/recommendations/view/templates/recommend-field-opts.html",
+                "title": "Search Fields Options"
+            },
+            "relevanceopts": {
+                "link": "recommendRelevanceOpts",
+                "filterContentLink": "app/recommendations/view/templates/recommend-relevance-opts.html",
+                "title": "Relevance Options"
+            },
+            "fieldset": {
+                "link": "recommendFieldSet",
+                "filterContentLink": "app/recommendations/view/templates/recommend-field-set.html",
+                "title": "Field Set"
+            }
+        },
+        "recommendBy" : {
+            "select": {
+                "00001177DBE2": "MAC Address",
+                "0_mj7DKkkY_WMh_egBf5kjtglJJxkxO8gR-YVewRbVDVtx30iqcGEaU3zaGkilIueX": "GUID",
+                "0001C285AA8D2729F34DD7E9A5EB08F6": "RDVR"
+            },
+            "paramBySelect": {
+                "00001177DBE2": "vod.user:stb.mac$",
+                "0_mj7DKkkY_WMh_egBf5kjtglJJxkxO8gR-YVewRbVDVtx30iqcGEaU3zaGkilIueX": "playnow.user:cim.guid$",
+                "0001C285AA8D2729F34DD7E9A5EB08F6": "rdvr$"
+            },
+            "value": "00001177DBE2"
+        },
+        "restopt": {
+            "endpoint": {
+                "label": "REST Endpoint",
+                "param": "restEndpoint"
+            },
+            "schema": {
+                "label": "Schema",
+                "param": "schema"
+            },
+            "ars": {
+                "label": "ARS",
+                "status": false,
+                "param": "ars",
+                "method": "GET"
+            },
+            "rollupNetworks": {
+                "label": "Rollup Networks",
+                "status": false,
+                "param": "rollupChildren",
+                "select": {
+                    "true": true,
+                    "false": false
+                },
+                "value": "true"
+            },
+            "debug": {
+                "label": "Show Debug Info",
+                "status": false,
+                "param": "debug",
+                "value": "true"
+            },
+            "client": {
+                "label": "Client",
+                "param": "client"
+            },
+            "paging": {
+                "start": {
+                    "label": "Results Start",
+                    "param": "start",
+                    "value": 1,
+                    "paginationStart": 1
+                },
+                "count": {
+                    "label": "Results Count",
+                    "param": "returned",
+                    "value": 10,
+                    "paginationEnd": 10
+                },
+                "pagination": false
+            },
+            "additionalRestParams": {
+                "label": "Additional Params",
+                "value": "",
+                "param": "additionalRestParams"
+            },
+            "overridenQueryString": {
+                "label": "Query Override",
+                "value": "",
+                "param": ""
+            }
+        },
+        "sources": {
+            "enablePlayNow" : {
+                "status": false,
+                "label": "Enable Play Now",
+                "filter": {
+                    "playNowDevice": {
+                        "label": "Play Now Device",
+                        "select": {
+                            "xfinitytv": "xfinitytv",
+                            "ipad": "ipad"
+                        },
+                        "param": "playnow.device:",
+                        "value": "xfinitytv"
+                    },
+                    "filterClips": {
+                        "status": false,
+                        "label": "Filter Clips",
+                        "param": "clips:",
+                        "value": "false"
+                    }
+                }
+            },
+            "enableVOD" : {
+                "status": true,
+                "label": "Enable VOD",
+                "filter": {
+                    "type": {
+                        "label": "Type",
+                        "select": {
+                            "udb.persona$": "Persona",
+                            "udb.mac$": "MAC Address",
+                            "merlin$": "Merlin"
+                        },
+                        "value": "udb.persona$",
+                        "subvalue": {
+                            "val": {
+                                "label": "Value",
+                                "selectedVal": ["udb.persona$", "udb.mac$","merlin$"],
+                                "value": "6099"
+                            }
+                        },
+                        "param" : "vod.location:"
+                    },
+                    "cimWhitelist": {
+                        "status": false,
+                        "label": "CIM Whitelist",
+                        "value": "cim.persona$cim-whitelist",
+                        "param" : "vod.location:"
+                    }
+                }
+            },
+            "enableTVList": {
+                "status": true,
+                "label": "Enable TV Listings",
+                "filter": {
+                    "tvListings": {
+                        "label": "TV Listings",
+                        "select": {
+                            "ncds$": "NCDS",
+                            "rovi$": "Rovi",
+                            "merlin$": "Merlin",
+                            "vcw$": "VCW"
+                        },
+                        "value": "merlin$",
+                        "subvalue": {
+                            "tvListMerlinId": {
+                                "label": "Merlin ID",
+                                "selectedVal": ["merlin$"],
+                                "value": "7444042768941558110"
+                            },
+                            "controllerId": {
+                                "label": "Controller ID",
+                                "selectedVal": ["ncds$", "vcw$"],
+                                "value": "119"
+                            },
+                            "channelMapId": {
+                                "label": "Channel Map ID",
+                                "selectedVal": ["ncds$", "vcw$"],
+                                "value": "215"
+                            },
+                            "headEndId": {
+                                "label": "Head End Id",
+                                "selectedVal": ["rovi$"],
+                                "value": "13924"
+                            },
+                            "deviceType": {
+                                "label": "Device Type",
+                                "selectedVal": ["rovi$"],
+                                "value": "X"
+                            }
+                        },
+                        "param": "tvlisting.location:"
+                    }
+                }
+            },
+            "enableColumbus": {
+                "status": false,
+                "label": "Enable Columbus",
+                "filter": {
+                    "encoding": {
+                        "label": "Encoding",
+                        "select": {
+                            "ISM": "ISM",
+                            "M3U": "M3U",
+                            "F4M": "F4M"
+                        },
+                        "param": "columbus.encoding:",
+                        "value": "ISM"
+                    },
+                    "columbusMerlinId": {
+                        "label": "Merlin ID",
+                        "param": "columbus.location:merlin$",
+                        "value": "5559937265859258110"
+                    }
+                }
+            }
+        },
+        "sortingAndGrouping": {
+            "sorting": {
+                "label": "Sort By",
+                "param": "sort",
+                "select": {
+                    "":"",
+                    "relevance": "Relevance",
+                    "airtime": "Air Time",
+                    "-airtime": "Air Time (desc)",
+                    "alpha": "Alphabetic",
+                    "-alpha": "Alphabetic (desc)",
+                    "shuffle": "Shuffle"
+                },
+                "value": ""
+            },
+            "grouping": {
+                "label": "Grouping",
+                "param": "grouping",
+                "status": false,
+                "select": {
+                    "expandBranches": "Expand Branches",
+                    "flat": "Flat"
+                },
+                "value": "expandBranches"
+            }
+        },
+        "searchFields": {
+            "tags": {
+                "status": false,
+                "label": "Tags",
+                "param": "entity.tags"
+            },
+            "synonyms": {
+                "status": false,
+                "label": "Synonyms",
+                "param": "synonyms"
+            },
+            "title": {
+                "status": false,
+                "label": "Title",
+                "param": "title"
+            }
+        },
+        "relevance" : {
+            "moltMin": {
+                "label": "MoLT Minimum",
+                "value": "5",
+                "param": ""
+            },
+            "precMin": {
+                "label": "PRec Minimum",
+                "value": "5",
+                "param": "prec-min:"
+            },
+            "relevanceAlgorithm": {
+                "status": false,
+                "label": "Relevance Algorithm",
+                "select": {
+                    "fusion": "Fusion"
+                },
+                "value": "fusion",
+                "param": ""
+            },
+            "subEngine": {
+                "status": false,
+                "label": "Sub Engine",
+                "select": {
+                    "docsim_opt1":"DOCSIM OPT1",
+                    "jinni":"JINNI",
+                    "usagevod":"USAGE VOD",
+                    "usageodol":"USAGE ODOL"
+                },
+                "param": "subengine:",
+                "value": ["docsim_opt1","jinni", "usagevod", "usageodol"]
+            },
+            "staticParam": {
+                "param": "usage:",
+                "value": ["catalog:vod", "genre:movies"]
+            }
+        },
+        "fields": {
+            "credits": { "label": "Credits", "param": "credits", "status": true },
+            "default": { "label": "Default", "param": "default", "status": true },
+            "didYouMean": { "label": "Did You Mean", "param": "didyoumean", "status": false },
+            "entityTags": { "label": "Entity Tags", "param": "entity.tags", "status": true },
+            "firstLiveGShowing": { "label": "First Live G.Showing", "param": "firstLiveGameShowing", "status": false },
+            "firstShowing": { "label": "First Showing", "param": "firstShowing", "status": true },
+            "images": { "label": "Images", "param": "images", "status": true },
+            "language": { "label": "Language", "param": "language", "status": true },
+            "networkHighlighted": { "label": "Network Highlighted", "param": "networkaffiliation.highlighted", "status": false },
+            "rating": { "label": "Rating", "param": "rating", "status": false },
+            "ref": { "label": "Ref", "param": "ref", "status": false },
+            "rexGenre": { "label": "REX Genre", "param": "rex.genre", "status": false },
+            "seriesType": { "label": "REX Genre", "param": "seriestype", "status": false },
+            "startYear": { "label": "Start Year", "param": "startyear", "status": false },
+            "stationHighlighted": { "label": "Station Highlighted", "param": "stationname.highlighted", "status": false },
+            "suggest": { "label": "Suggest", "param": "suggest", "status": false },
+            "titleHighlighted": { "label": "Title Highlighted", "param": "title.highlighted", "status": false },
+            "waysToWatch": { "label": "Ways To Watch", "param": "waystowatch", "status": true }
+        },
+        "filters": {
+            "coreFilters" : {
+                "label": "Core Filters",
+                "param": "coreFilters",
+                "filtersGroup": {
+                    "audience": {
+                        "label": "Audience",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "valueOperator": "AND",
+                        "multiple": true,
+                        "select": {
+                            "kids":"Kids",
+                            "adult":"Adult",
+                            "all":"All"
+                        },
+                        "value": [ "kids" ],
+                        "innerOperator": {
+                            "AND": "AND",
+                            "OR": "OR",
+                            "AND NOT": "NOT"
+                        },
+                        "innerOperatorValue": "OR",
+                        "param":"audience:"
+                    },
+                    "entityType" : {
+                        "label": "Entity Type",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "valueOperator": "AND",
+                        "multiple": true,
+                        "select": {
+                            "sports":"sports",
+                            "sport":"sport",
+                            "league":"league",
+                            "sportsevent":"sportsevent",
+                            "team":"team",
+                            "person":"person",
+                            "network":"network",
+                            "genre":"genre",
+                            "topic":"topic",
+                            "program":"program",
+                            "movie":"movie",
+                            "series":"series",
+                            "company":"company",
+                            "shortcut":"shortcut",
+                            "SeriesMaster":"series master",
+                            "SportingEvent":"sporting event",
+                            "Preview":"preview",
+                            "Advertisement":"advertisement",
+                            "MusicVideo":"music video",
+                            "Minisode":"minisode",
+                            "Extra":"extra",
+                            "Concert":"concert"
+                        },
+                        "value": [ "sports" ],
+                        "innerOperator": {
+                            "AND": "AND",
+                            "OR": "OR",
+                            "AND NOT": "NOT"
+                        },
+                        "innerOperatorValue": "OR",
+                        "param":"entitytype:"
+                    },
+                    "titleStartCharacter": {
+                        "label": "Title Start Character",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "valueOperator": "AND",
+                        "rangeFilter": true,
+                        "value": {
+                            "from": "@",
+                            "to": "z"
+                        },
+                        "param":"titlestartcharacter:"
+                    }
+                }
+            },
+            "tagFilters": {
+                "label": "Tag Filters",
+                "param": "tagFilters",
+                "filtersGroup": {
+                    "companyId": {
+                        "label": "Company ID",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "valueOperator": "AND",
+                        "value": "7132458580137855105",
+                        "param": "tag.id.company:"
+                    },
+                    "tags": {
+                        "label": "Tags",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "valueOperator": "AND",
+                        "value": "type$game",
+                        "param":"tags:"
+                    },
+                    "entityTags": {
+                        "label": "Entity Tags",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "valueOperator": "AND",
+                        "value": "",
+                        "param": "entity.tags:merlin$"
+                    },
+                    "entitlementTag" : {
+                        "label": "Entitlement Tag",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "valueOperator": "AND",
+                        "multiple": true,
+                        "select": {
+                            "free": "Free",
+                            "sub": "Sub"
+                        },
+                        "value": ["free", "sub"],
+                        "innerOperator": {
+                            "AND": "AND",
+                            "OR": "OR"
+                        },
+                        "innerOperatorValue": "OR",
+                        "param":"tag.entitlement:"
+                    }
+                }
+            },
+            "pricingFilters": {
+                "label": "Pricing Filters",
+                "param": "pricingFilters",
+                "filtersGroup":{
+                    "free": {
+                        "label": "Free",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND"
+                        },
+                        "valueOperator": "AND",
+                        "value": "0",
+                        "param":"price:"
+                    }
+                }
+            },
+            "ratingsFilters": {
+                "label": "Ratings Filters",
+                "param": "ratingsFilters",
+                "filtersGroup":{
+                    "audienceRating" : {
+                        "label": "Audience Rating",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "valueOperator": "AND",
+                        "multiple": true,
+                        "select": {
+                            "mpaa$nr": "mpaa$nr",
+                            "mpaa$r": "mpaa$r",
+                            "mpaa$pg": "mpaa$pg",
+                            "mpaa$pg-13": "mpaa$pg-13",
+                            "mpaa$g": "mpaa$g",
+                            "mpaa$adult": "mpaa$adult",
+                            "mpaa$nc-17": "mpaa$nc-17",
+                            "tv$nr": "tv$nr",
+                            "tv$tvpg": "tv$tvpg",
+                            "tv$tv14": "tv$tv14",
+                            "tv$tvma": "tv$tvma",
+                            "tv$tvy": "tv$tvy",
+                            "tv$tvy7": "tv$tvy7"
+                        },
+                        "value": [ "mpaa$nr" ],
+                        "innerOperator": {
+                            "AND": "AND",
+                            "OR": "OR",
+                            "AND NOT": "NOT"
+                        },
+                        "innerOperatorValue": "OR",
+                        "param":"rating.audience:"
+                    },
+                    "starRating": {
+                        "label": "Star Rating",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "valueOperator": "AND",
+                        "rangeFilter": true,
+                        "value": {
+                            "from": "",
+                            "to": ""
+                        },
+                        "param":"rating.star:"
+                    }
+                }
+            },
+            "showingFilters": {
+                "label": "Showing Filters",
+                "param": "showingFilters",
+                "filtersGroup": {
+                    "videoFormat": {
+                        "label": "Video Format",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND"
+                        },
+                        "valueOperator": "AND",
+                        "multiple": true,
+                        "select": {
+                            "hd":"HD",
+                            "sd":"SD",
+                            "3d":"3D"
+                        },
+                        "value": [ "hd" ],
+                        "innerOperator": {
+                            "AND": "AND",
+                            "OR": "OR"
+                        },
+                        "innerOperatorValue": "OR",
+                        "param":"video.format:"
+                    },
+                    "airtype": {
+                        "label": "Air Type",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "valueOperator": "AND",
+                        "multiple": true,
+                        "select": {
+                            "live": "Live",
+                            "new": "NEW",
+                            "repeat": "Repeat",
+                            "taped": "Taped"
+                        },
+                        "value": [ "live" ],
+                        "innerOperator": {
+                            "AND": "AND",
+                            "OR": "OR"
+                        },
+                        "innerOperatorValue": "OR",
+                        "param": "airtype:"
+                    }
+                }
+            },
+            "timeFilters": {
+                "label": "Time Filters",
+                "param": "timeFilters",
+                "filtersGroup": {
+                    "windowStart": {
+                        "label": "Window Start",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND"
+                        },
+                        "valueOperator": "AND",
+                        "valueStartDate": "",
+                        "value": "date",
+                        "param":"window.start:"
+                    },
+                    "windowEnd": {
+                        "label": "Window End",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND"
+                        },
+                        "valueOperator": "AND",
+                        "valueEndDate": "",
+                        "value": "date",
+                        "param":"window.end:"
+                    }
+                }
+            },
+            "otherFilters" : {
+                "label": "Other Filters",
+                "param": "otherFilters",
+                "filtersGroup": {
+                    "role": {
+                        "label": "Role",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "multiple": true,
+                        "valueOperator": "AND",
+                        "select": {
+                            "actor": "Actor",
+                            "director": "Director",
+                            "voice": "Voice"
+                        },
+                        "value": [ "actor" ],
+                        "innerOperator": {
+                            "AND": "AND",
+                            "OR": "OR"
+                        },
+                        "innerOperatorValue": "OR",
+                        "param": "role:"
+                    },
+                    "containsMerlinId": {
+                        "label": "Contains Merlin Id",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "valueOperator": "AND",
+                        "value": "merlin",
+                        "param": "idspace:"
+                    },
+                    "productContext": {
+                        "label": "Product Context",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "valueOperator": "AND",
+                        "value": "8004164956865758110",
+                        "param":"tag.id.productContext:"
+                    },
+                    "category": {
+                        "label": "Category",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "multiple": true,
+                        "valueOperator": "AND",
+                        "select": {
+                            "Sports":"Sports",
+                            "Movie":"Movie",
+                            "Other":"Other",
+                            "Music":"Music",
+                            "Lifestyle":"Lifestyle",
+                            "News":"News"
+                        },
+                        "value": [ "sports" ],
+                        "innerOperator": {
+                            "AND": "AND",
+                            "OR": "OR",
+                            "AND NOT": "NOT"
+                        },
+                        "innerOperatorValue": "OR",
+                        "param": "category:"
+                    },
+                    "offer" : {
+                        "label": "Offer",
+                        "status": false,
+                        "selectOperator": {
+                            "AND": "AND",
+                            "AND NOT": "NOT"
+                        },
+                        "multiple": true,
+                        "valueOperator": "AND",
+                        "select": {
+                            "buy": "buy",
+                            "all": "all"
+                        },
+                        "value": [ "buy" ],
+                        "innerOperator": {
+                            "AND": "AND",
+                            "OR": "OR"
+                        },
+                        "innerOperatorValue": "OR",
+                        "param": "offer:"
+                    }
+                }
+            },
+            "filterOverride": {
+                "label": "Filter Override",
+                "value": ""
+            }
+        }
+    },
+    "menuAlias": {
+        "templates": {
+            "restoption": {
+                "link": "menuRestOption",
+                "filterContentLink": "app/menu/view/templates/menu-rest-opt.html",
+                "title": "REST Options"
+            },
+            "ars": {
+                "link": "menuArs",
+                "filterContentLink": "app/menu/view/templates/menu-ars.html",
+                "title": "ARS"
+            },
+            "sources": {
+                "link": "menuSources",
+                "filterContentLink": "app/menu/view/templates/menu-sources.html",
+                "title": "Sources"
+            },
+            "sortandgroup": {
+                "link": "menuSortAndGroup",
+                "filterContentLink": "app/menu/view/templates/menu-sorting-grouping.html",
+                "title": "Sorting & Grouping"
+            },
+            "fieldset": {
+                "link": "menuFieldSet",
+                "filterContentLink": "app/menu/view/templates/menu-field-set.html",
+                "title": "Field Set"
+            }
+        },
+        "rootalias" : {
+            "value": "x2-root",
+            "param": "rootalias"
+        },
+        "restopt": {
+            "endpoint": {
+                "param": "restEndpoint"
+            },
+            "schema": {
+                "param": "schema"
+            },
+            "client": {
+                "param": "client"
+            },
+            "optOut": {
+                "label": "Opt in/out",
+                "status": false,
+                "param": "p.opt-out",
+                "value": "true"
+            },
+            "recursive": {
+                "label": "Recursive",
+                "status": false,
+                "param": "recursive",
+                "value": "true"
+            },
+            "recursiveDepth": {
+                "label": "Recursive Depth",
+                "status": false,
+                "param": "recursive.depth",
+                "value": "0"
+            },
+            "ars": {
+                "param": "ars",
+                "method": "POST"
+            },
+            "paging": {
+                "param": "items.paging",
+                "start": 1,
+                "count": 10,
+                "pagination": false,
+                "paginationStart": 1,
+                "paginationEnd": 10
+            },
+            "datetime": {
+                "label": "Datetime",
+                "value": "1379594240683",
+                "param": "datetime"
+            },
+            "datetimeOffset": {
+                "label": "Datetime Offset",
+                "value": "-5",
+                "param": "datetime.offset"
+            },
+            "additionalRestParams": {
+                "label": "Additional Params",
+                "value": "",
+                "param": "additionalRestParams"
+            },
+            "overridenQueryString": {
+                "label": "Query Override",
+                "value": "",
+                "param": ""
+            }
+        },
+        "sources": {
+            "enableVOD": {
+                "status": true,
+                "atag": "vod$8875744356864243110",
+                "defaultAtag": "vod$8875744356864243110",
+                "atagPrefix": "vod",
+                "param": "user.atags",
+                "title": "Enable VOD",
+                "inputTitle": "Availability Tag",
+                "filter": "catalog.type:vod"
+            },
+            "enableTVList": {
+                "status": true,
+                "atag": "linear$7444042768941558110",
+                "defaultAtag": "linear$7444042768941558110",
+                "atagPrefix": "linear",
+                "param": "user.atags",
+                "title": "Enable TV Listings",
+                "inputTitle": "Availability Tag",
+                "filter": "catalog.type:linear"
+            },
+            "enableDeviceId": {
+                "status": false,
+                "param": "device.id",
+                "title": "Enable Device ID",
+                "inputTitle": "Device ID",
+                "value": "comcast:xbo:deviceId:50475374"
+            },
+            "enableAccountId": {
+                "status": false,
+                "param": "account.id",
+                "title": "Enable Account ID",
+                "inputTitle": "Account ID",
+                "value": "comcast:xbo:accountId:5394310"
+            },
+            "enableETags": {
+                "status": false,
+                "param": "user.etags",
+                "title": "Enable Entitlement Tags",
+                "inputTitle": "Entitlement Tags",
+                "value": "vod$8559324935520996141"
+            },
+            "enableImageId": {
+                "status": true,
+                "param": "filter.image.gid",
+                "title": "Enable Image group ID/IDs",
+                "inputTitle": "Image group ID/IDs",
+                "value": "9218902759746521161,8580885346555644161,7020167223608802161,7171039184798784161"
+            }
+        },
+        "sortingAndGrouping": {
+            "title": {
+                "title": "Title Sort",
+                "status": false,
+                "selectOperator": {
+                    "ASC": "ASC",
+                    "DESC": "DESC"
+                },
+                "sort": "ASC",
+                "value": "title",
+                "param": "sort"
+            }
+        },
+        "fields": {
+            "program": {
+                "title": "Program",
+                "param": "fields",
+                "multiple": true,
+                "select": {
+                    "all": { "label": "All", "param": "program.all" },
+                    "id": { "label": "ID", "param": "program.id" },
+                    "title": { "label": "Title", "param": "program.title" },
+                    "synopsis": { "label": "Synopsis", "param": "program.synopsis" },
+                    "year": { "label": "Year", "paraml": "program.year" },
+                    "language": { "label": "Language", "param": "program.language" },
+                    "programType": { "label": "Program Type", "param": "program.programtype" },
+                    "parentId": { "label": "Parent ID", "param": "program.parentid" },
+                    "seasonNumber": { "label": "Season Number", "param": "program.seasonnumber" },
+                    "episodeNumber": { "label": "Episode Number", "param": "program.episodenumber" },
+                    "seriesEpisodeNumber": { "label": "Series Episode Number", "param": "program.episodenumber" },
+                    "duration": { "label": "Duration", "param": "program.duration" },
+                    "audience": { "label": "Audience", "param": "program.audience" },
+                    "rating": { "label": "Rating", "param": "program.rating" },
+                    "starrating": { "label": "Star Rating", "param": "program.starrating" },
+                    "category": { "label": "Category", "param": "program.category" },
+                    "tags": { "label": "Tags", "param": "program.tags" },
+                    "originalairdate": { "label": "Original Air Date", "param": "program.originalairdate" },
+                    "images": { "label": "Images", "param": "program.images" }
+                },
+                "status": true,
+                "value": [ "program.all" ]
+            }
+        }
+    },
+    "menuEntity": {
+        "templates": {
+            "restoption": {
+                "link": "menuRestOption",
+                "filterContentLink": "app/menu/view/templates/menu-rest-opt.html",
+                "title": "REST Options"
+            },
+            "ars": {
+                "link": "menuArs",
+                "filterContentLink": "app/menu/view/templates/menu-ars.html",
+                "title": "ARS"
+            },
+            "sources": {
+                "link": "menuSources",
+                "filterContentLink": "app/menu/view/templates/menu-sources.html",
+                "title": "Sources"
+            },
+            "sortandgroup": {
+                "link": "menuSortAndGroup",
+                "filterContentLink": "app/menu/view/templates/menu-sorting-grouping.html",
+                "title": "Sorting & Grouping"
+            },
+            "fieldset": {
+                "link": "menuFieldSet",
+                "filterContentLink": "app/menu/view/templates/menu-field-set.html",
+                "title": "Field Set"
+            }
+        },
+        "rootalias" : {
+            "value": "x2-root",
+            "param": "alias"
+        },
+        "entityId" : {
+            "value": "5232923399725817105",
+            "param": "entityid"
+        },
+        "entityType" : {
+            "value": "company",
+            "param": "entitytype"
+        },
+        "restopt": {
+            "endpoint": {
+                "param": "restEndpoint"
+            },
+            "schema": {
+                "param": "schema"
+            },
+            "client": {
+                "param": "client"
+            },
+            "optOut": {
+                "label": "Opt in/out",
+                "status": false,
+                "param": "p.opt-out",
+                "value": "true"
+            },
+            "recursive": {
+                "label": "Recursive",
+                "status": false,
+                "param": "recursive",
+                "value": "true"
+            },
+            "recursiveDepth": {
+                "label": "Recursive Depth",
+                "status": false,
+                "param": "recursive.depth",
+                "value": "0"
+            },
+            "ars": {
+                "param": "ars",
+                "method": "POST"
+            },
+            "paging": {
+                "param": "items.paging",
+                "start": 1,
+                "count": 10,
+                "pagination": false,
+                "paginationStart": 1,
+                "paginationEnd": 10
+            },
+            "datetime": {
+                "label": "Datetime",
+                "value": "1379594240683",
+                "param": "datetime"
+            },
+            "datetimeOffset": {
+                "label": "Datetime Offset",
+                "value": "-5",
+                "param": "datetime.offset"
+            },
+            "additionalRestParams": {
+                "label": "Additional Params",
+                "value": "",
+                "param": "additionalRestParams"
+            },
+            "overridenQueryString": {
+                "label": "Query Override",
+                "value": "",
+                "param": ""
+            }
+        },
+        "sources": {
+            "enableVOD": {
+                "status": false,
+                "atag": "vod$8875744356864243110",
+                "defaultAtag": "vod$8875744356864243110",
+                "atagPrefix": "vod",
+                "param": "user.atags",
+                "title": "Enable VOD",
+                "inputTitle": "Availability Tag",
+                "filter": "catalog.type:vod"
+            },
+            "enableTVList": {
+                "status": false,
+                "atag": "linear$7444042768941558110",
+                "defaultAtag": "linear$7444042768941558110",
+                "atagPrefix": "linear",
+                "param": "user.atags",
+                "title": "Enable TV Listings",
+                "inputTitle": "Availability Tag",
+                "filter": "catalog.type:linear"
+            },
+            "enableDeviceId": {
+                "status": false,
+                "param": "device.id",
+                "title": "Enable Device ID",
+                "inputTitle": "Device ID",
+                "value": "comcast:xbo:deviceId:50475374"
+            },
+            "enableAccountId": {
+                "status": false,
+                "param": "account.id",
+                "title": "Enable Account ID",
+                "inputTitle": "Account ID",
+                "value": "comcast:xbo:accountId:5394310"
+            },
+            "enableETags": {
+                "status": false,
+                "param": "user.etags",
+                "title": "Enable Entitlement Tags",
+                "inputTitle": "Entitlement Tags",
+                "value": "vod$8559324935520996141"
+            },
+            "enableImageId": {
+                "status": true,
+                "param": "filter.image.gid",
+                "title": "Enable Image group ID/IDs",
+                "inputTitle": "Image group ID/IDs",
+                "value": "9218902759746521161,8580885346555644161,7020167223608802161,7171039184798784161"
+            }
+        },
+        "sortingAndGrouping": {
+            "title": {
+                "title": "Title Sort",
+                "status": false,
+                "selectOperator": {
+                    "ASC": "ASC",
+                    "DESC": "DESC"
+                },
+                "sort": "ASC",
+                "value": "title",
+                "param": "sort"
+            }
+        },
+        "fields": {
+            "program": {
+                "title": "Program",
+                "param": "fields",
+                "multiple": true,
+                "select": {
+                    "all": { "label": "All", "param": "program.all" },
+                    "id": { "label": "ID", "param": "program.id" },
+                    "title": { "label": "Title", "param": "program.title" },
+                    "synopsis": { "label": "Synopsis", "param": "program.synopsis" },
+                    "year": { "label": "Year", "paraml": "program.year" },
+                    "language": { "label": "Language", "param": "program.language" },
+                    "programType": { "label": "Program Type", "param": "program.programtype" },
+                    "parentId": { "label": "Parent ID", "param": "program.parentid" },
+                    "seasonNumber": { "label": "Season Number", "param": "program.seasonnumber" },
+                    "episodeNumber": { "label": "Episode Number", "param": "program.episodenumber" },
+                    "seriesEpisodeNumber": { "label": "Series Episode Number", "param": "program.episodenumber" },
+                    "duration": { "label": "Duration", "param": "program.duration" },
+                    "audience": { "label": "Audience", "param": "program.audience" },
+                    "rating": { "label": "Rating", "param": "program.rating" },
+                    "starrating": { "label": "Star Rating", "param": "program.starrating" },
+                    "category": { "label": "Category", "param": "program.category" },
+                    "tags": { "label": "Tags", "param": "program.tags" },
+                    "originalairdate": { "label": "Original Air Date", "param": "program.originalairdate" },
+                    "images": { "label": "Images", "param": "program.images" }
+                },
+                "status": false,
+                "value": [ "program.all" ]
+            }
+        }
+    }
+}

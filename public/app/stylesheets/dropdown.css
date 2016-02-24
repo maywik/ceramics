@@ -1,0 +1,25 @@
+div#navbar ul.dropdown-menu {
+    background-color: #663300;
+}
+
+div#navbar ul.dropdown-menu li a {
+    color: #9d9d9d;
+}
+
+div#navbar ul.dropdown-menu>.active>a,
+div#navbar ul.dropdown-menu>.active>a:focus,
+div#navbar ul.dropdown-menu>.active>a:hover,
+.navbar-inverse .navbar-nav>.open>a,
+.navbar-inverse .navbar-nav>.open>a:focus,
+.navbar-inverse .navbar-nav>.open>a:hover{
+    background-color: #ff6464;
+    color: #ffffff;
+}
+
+div#navbar ul.dropdown-menu a:hover {
+    color: #ffffff;
+    background-color: transparent;
+}
+
+
+

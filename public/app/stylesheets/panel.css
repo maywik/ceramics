@@ -1,0 +1,80 @@
+div.left_panel {
+    border-right: solid 1px #999;
+}
+
+div.right_panel {
+    border-right: solid 1px #ddd;
+}
+
+div.text-wrap {
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+div.panel-empty {
+    /*border-top: solid 1px #ddd;*/
+    border-bottom: solid 1px #ddd;
+    margin: 15px;
+}
+
+div.panel-group {
+    margin-bottom: 0;
+}
+
+div.wrap-elems-paragraph {
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.panel-result div.wrap-elems-paragraph {
+    background-color: transparent;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+.wrap-elems-paragraph select {
+    width: 100%;
+}
+
+.sources div[class*="col-"]:not(:last-child) {
+    min-height: 100px;
+}
+
+div.panel-disabled .panel-heading {
+    background-color: #fff;
+    color: #999;
+}
+div.panel-disabled a {
+    cursor: default;
+    text-decoration: none;
+}
+
+.panel.panel-url .panel-body,
+.panel.panel-result .panel-body {
+    position: relative;
+    background-color: #ECEADE;
+}
+
+.panel .pagination {
+    font-size: 13px;
+    color: #666666;
+    display: block;
+    margin: 10px 0;
+}
+
+.panel .pagination span.glyphicon {
+    cursor: pointer;
+}
+
+.panel .pagination span.glyphicon:hover {
+    color: #999999;
+}
+
+.panel-default>.panel-heading {
+    background-color: #ECEADE;
+}
+
+.panel-title {
+    font-size: 18px;
+}
