@@ -146,12 +146,14 @@ var getCatalog = function(list) {
   return catalog;
 };
 
-var port = args.p || args.port || 8010;
-var server = app.listen(port, function () {
+var ipaddress = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
+var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 
-  var host = server.address().address;
-  var port = server.address().port;
+var server = app.listen(port, ipaddress, function () {
 
-  console.log('Ceramics app listening at http://%s:%s', host, port);
+  //var host = server.address().address;
+  //var port = server.address().port;
+
+  console.log('Ceramics app listening at http://%s:%s', ipaddress, port);
 
 });
