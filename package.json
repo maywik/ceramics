@@ -12,7 +12,7 @@
     "shelljs": "^0.2.6"
   },
   "scripts": {
-    "postinstall": "if [ -d \"$OPENSHIFT_REPO_DIR\" ]; then (export HOME=\"$OPENSHIFT_REPO_DIR\"/..; bower install) else (bower install) fi",
+    "postinstall": "export HOME=/var/lib/openshift/[instance-id]/app-root/runtime/repo; ./node_modules/bower/bin/bower install",
     "prestart": "npm install",
     "start": "node server.js -p 8081",
     "pretest": "npm install",
