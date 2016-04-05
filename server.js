@@ -33,7 +33,7 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 app.use(express.static(__dirname + '/public'));
-app.use('/bower_components',  express.static(__dirname + '/bower_components'));
+app.use('/components',  express.static(__dirname + '/components'));
 app.use(bodyParser.json());
 
 app.get('/', function(req, res){
