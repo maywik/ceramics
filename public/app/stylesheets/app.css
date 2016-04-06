@@ -83,12 +83,18 @@ h1,h2,h3,h4,a {
   min-height: 60px;
 }
 
-a.logo.navbar-brand {
+div.logo {
+  margin: 0 auto;
+  width: 400px;
+}
+
+div.logo a.navbar-brand {
   color: #E1DBCB;
-  font-size: 20px;
+  font-size: 25px;
   font-family: monospace;
   text-align: -webkit-center;
   font-weight: bold;
+  line-height: 23px;
 }
 
 .wreck {
@@ -134,7 +140,7 @@ a#top-scroll:hover {
   cursor: pointer;
 }
 
-a.logo img {
+div.logo a.navbar-brand img {
   -webkit-filter: drop-shadow(0px 0px 3px #E2D8B5);
   filter: drop-shadow(0px 0px 3px #E2D8B5);
   padding: 8px;
