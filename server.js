@@ -15,8 +15,8 @@ var smtpTransport = nodemailer.createTransport(smtpTransport({
   secureConnection : false,
   port: 587,
   auth : {
-    user: "vadstagit@gmail.com",
-    pass: ""
+    user: "stagitnina@gmail.com",
+    pass: "ns_GM2016"
   }
 }));
 
@@ -74,8 +74,8 @@ app.post('/order', function(req, res) {
 
 
   var mail = {
-    from: "vadstagit@gmail.com",
-    to: "vadstagit@gmail.com",
+    from: "stagitnina@gmail.com",
+    to: "stagitnina@gmail.com",
     subject: "У вас новый заказ!!!",
     text: "У вас новый заказ!!!",
     html: generalMailText
