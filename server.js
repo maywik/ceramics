@@ -20,7 +20,7 @@ var smtpTransport = nodemailer.createTransport(smtpTransport({
   }
 }));
 
-var adminData = {name: 'admin', password: '123'};
+var adminData = {name: 'admin', password: 'admin1518'};
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
