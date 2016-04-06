@@ -83,9 +83,12 @@ h1,h2,h3,h4,a {
   min-height: 60px;
 }
 
-.wreck .navbar-brand {
-  color: #ff6464;
+a.logo.navbar-brand {
+  color: #E1DBCB;
+  font-size: 20px;
   font-family: monospace;
+  text-align: -webkit-center;
+  font-weight: bold;
 }
 
 .wreck {
