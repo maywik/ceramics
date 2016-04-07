@@ -88,3 +88,24 @@
         <input type="submit" ng-click="orderContent()" class="btn btn-default" value="Заказать">
     </form>
 </modal>
+<modal title="Подтверждение заказа" visible="showConfiramtionModal">
+    <form role="form">
+        <div class="form-group">
+            <label>Ваше имя: {{user.name}}</label>
+        </div>
+        <div class="form-group">
+            <label>Телефон: {{user.phone}}</label>
+        </div>
+        <div class="form-group">
+            <label>Ваш заказ:
+                <span ng-repeat="item in order.productTitles">
+                    <ul>
+                        <li>{{item}}</li>
+                    </ul>
+                </span>
+            </label>
+        </div>
+        <input type="submit" ng-click="confirmOrder()" class="btn btn-default" value="Подтвердить">
+        <input type="submit" ng-click="cancelOrder()" class="btn btn-default" value="Отменить">
+    </form>
+</modal>

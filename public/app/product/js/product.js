@@ -10,13 +10,14 @@ angular.module('ceramics').controller('ProductPageController', ['$rootScope',
         $scope.result = { json : {} };
         $scope.user = {};
         $scope.activeOrder = false;
+        $scope.order = {};
 
         $scope.showModal = false;
+        $scope.showConfiramtionModal = false;
+
         $scope.toggleModal = function(){
             $scope.showModal = !$scope.showModal;
         };
-
-
 
         $scope.getResult = function() {
             $http({
@@ -40,19 +41,45 @@ angular.module('ceramics').controller('ProductPageController', ['$rootScope',
         };
 
         $scope.orderContent = function() {
-            var order = {};
+            $scope.order = {};
             if (!$scope.user.name || !$scope.user.phone) {
                 return;
             }
 
-            order = {
+            $scope.order = {
                 'imageNames' : $scope.updateCheckedProduct(),
                 'userName': $scope.user.name,
-                'userPhone': $scope.user.phone
+                'userPhone': $scope.user.phone,
+                'productTitles' : $scope.updateCheckedProductTitles()
             };
 
-            $scope.postResult({'order' : order}, '/order');
+            $scope.showConfiramtionModal = true;
+            $scope.showModal = false;
+        };
+
+        $scope.confirmOrder = function() {
+            $scope.postResult({'order' : $scope.order}, '/order');
             $window.location.reload();
+        };
+
+        $scope.cancelOrder = function() {
+            $scope.showConfiramtionModal = false;
+        };
+
+        $scope.updateCheckedProductTitles = function () {
+            var remProductNames = [];
+            var catalog = $scope.result.json.catalog;
+
+            for (var catalog_key in catalog) {
+                var catalogObj = catalog[catalog_key];
+                for (var product_key in catalogObj) {
+                    var product = catalogObj[product_key];
+                    if (product.in_order) {
+                        remProductNames.push(product.productName + " - " + product.title + " - " + product.price);
+                    }
+                }
+            }
+            return remProductNames;
         };
 
         $scope.updateCheckedProduct = function () {
