@@ -92,9 +92,13 @@ div.logo a.navbar-brand {
   color: #E1DBCB;
   font-size: 25px;
   font-family: monospace;
-  text-align: -webkit-center;
+  text-align: center;
   font-weight: bold;
   line-height: 23px;
+}
+
+div.logo a.navbar-brand>img {
+  margin: 0 auto;
 }
 
 .wreck {
