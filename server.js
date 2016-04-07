@@ -133,7 +133,7 @@ var verifyImageName = function(imgName) {
   var title = imageNameOpts[2] ? imageNameOpts[2].split('-').join(' ') : '';
   var price = imageNameOpts[3] && parseInt(imageNameOpts[3].split('.')[0]) ? imageNameOpts[3].split('.')[0] + ' грн' : '';
 
-  if (!!panelName && !!productName && !!title && !!price) {
+  if (imageNameOpts.length == 4 && !!panelName && !!productName && !!title && !!price) {
     options = {
       panelName: panelName,
       productName: productName,
