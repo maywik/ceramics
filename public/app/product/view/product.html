@@ -10,6 +10,7 @@
             </a>
             <h1>Продукция</h1>
             <p>В этом разделе Вы можете просмотреть каталог и заказать продукцию которая Вам понравилась.</p>
+            <p class="pull-right">Всего изделий: {{result.json.productsCount}}</p>
             <div class="row" ng-if="isAdmin">
                 <div class="col-md-12">
                     <form action="/upload" enctype="multipart/form-data" method="post">

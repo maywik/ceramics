@@ -120,7 +120,7 @@ app.post('/remove', function(req, res) {
 
 app.get('/product/catalog', function(req, res, next) {
   fs.readdir(catalogPath, function (err, list) {
-    res.json({'catalog': getCatalog(list)});
+    res.json({'catalog': getCatalog(list), 'productsCount' : list.length});
   });
 });
 
