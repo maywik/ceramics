@@ -38,3 +38,14 @@ To add dependency to package.json configuration (already available in package.js
 
 npm install express --save# ceramics
 # ceramics
+
+### Image name rules
+
+-->> ch_Чашки_Желтая-цилиндр_146.jpg <<--
+
+ch - paragraph mark
+_ - separator
+Чашки - catalog name
+Желтая-цилиндр - product description
+- - space
+146 - price
