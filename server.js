@@ -30,7 +30,17 @@ var storage = multer.diskStorage({
     cb(null, file.originalname)
   }
 });
-var upload = multer({ storage: storage });
+var upload = multer({
+  storage : storage,
+  fileFilter: function (req, file, cb) {
+    if (!verifyImageName(file.originalname)) {
+      console.log(file.originalname + ' -> goes wrong on the image name');
+      return cb(null, false, new Error('goes wrong on the image name'));
+    }
+    cb(null, true);
+  }
+
+});
 
 app.use(express.static(__dirname + '/public'));
 app.use('/components',  express.static(__dirname + '/components'));
@@ -114,33 +124,54 @@ app.get('/product/catalog', function(req, res, next) {
   });
 });
 
+var verifyImageName = function(imgName) {
+  var options = null;
+  var imageNameOpts = imgName.split("_");
+
+  var panelName = imageNameOpts[0] ? imageNameOpts[0] : '';
+  var productName = imageNameOpts[1] ? imageNameOpts[1] : '';
+  var title = imageNameOpts[2] ? imageNameOpts[2].split('-').join(' ') : '';
+  var price = imageNameOpts[3] && parseInt(imageNameOpts[3].split('.')[0]) ? imageNameOpts[3].split('.')[0] + ' грн' : '';
+
+  if (!!panelName && !!productName && !!title && !!price) {
+    options = {
+      panelName: panelName,
+      productName: productName,
+      title: title,
+      price: price
+    }
+  }
+
+  return options;
+};
+
 var getCatalog = function(list) {
   var catalog = {};
   var panelNames = [];
+  var productInfo = null;
+
   for (var i = 0; i < list.length; i++) {
-    var imageNameOpts = list[i].split("_");
+    var imgName = list[i];
+    var imageNameOpts = verifyImageName(imgName);
 
-    var panelName = imageNameOpts[0] ? imageNameOpts[0] : 'empty';
-    var productName = imageNameOpts[1] ? imageNameOpts[1] : 'empty';
-    var title = imageNameOpts[2] ? imageNameOpts[2].split('-').join(' ') : 'empty';
-    var price = imageNameOpts[3] ? imageNameOpts[3].split('.')[0] + ' грн' : 'empty';
+    if (imageNameOpts) {
+      productInfo = {
+        'path': 'app/images/catalog/',
+        'imageName': imgName,
+        'productName': imageNameOpts.productName,
+        'title': imageNameOpts.title,
+        'price': imageNameOpts.price,
+        'rem_selected': false,
+        'in_order': false
+      };
 
-    var productInfo = {
-      'path':'app/images/catalog/',
-      'imageName':list[i],
-      'productName': productName,
-      'title':title,
-      'price':price,
-      'rem_selected': false,
-      'in_order': false
-    };
+      if (panelNames.indexOf(imageNameOpts.panelName) == -1) {
+        catalog[imageNameOpts.panelName] = [];
+        panelNames.push(imageNameOpts.panelName);
+      }
 
-    if (panelNames.indexOf(panelName) == -1) {
-      catalog[panelName] = [];
-      panelNames.push(panelName);
+      catalog[imageNameOpts.panelName].push(productInfo);
     }
-
-    catalog[panelName].push(productInfo);
   }
 
   return catalog;
