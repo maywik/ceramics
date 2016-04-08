@@ -11,9 +11,11 @@ angular.module('ceramics').controller('ProductPageController', ['$rootScope',
         $scope.user = {};
         $scope.activeOrder = false;
         $scope.order = {};
+        $scope.zoomInImage = {};
 
         $scope.showModal = false;
         $scope.showConfiramtionModal = false;
+        $scope.showZoomInImageModal = false;
 
         $scope.toggleModal = function(){
             $scope.showModal = !$scope.showModal;
@@ -80,6 +82,14 @@ angular.module('ceramics').controller('ProductPageController', ['$rootScope',
                 }
             }
             return remProductNames;
+        };
+
+        $scope.showZoomInImage = function (imgObj) {
+            $scope.showZoomInImageModal = true;
+            $scope.zoomInImage = {
+                'imgSrc': imgObj.path + imgObj.imageName,
+                'imgTitle': imgObj.productName + " - " + imgObj.title
+            };
         };
 
         $scope.updateCheckedProduct = function () {

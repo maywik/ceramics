@@ -9,7 +9,7 @@
                 <img src="/app/images/logo.png" height="86px" width="70px">
             </a>
             <h1>Продукция</h1>
-            <p>В этом разделе Вы можете просмотреть каталог и заказать продукцию которая Вам понравилась.</p>
+            <p>В этом разделе Вы можете просмотреть каталог и заказать продукцию, которая Вам понравилась.</p>
             <p class="pull-right">Всего изделий: {{result.json.productsCount}}</p>
             <div class="row" ng-if="isAdmin">
                 <div class="col-md-12">
@@ -37,7 +37,7 @@
                                             <div class="panel panel-default">
                                                 <div class="panel-heading">
                                                     <div class="icon thumbnail">
-                                                        <img ng-src="{{collectionitem.path}}{{collectionitem.imageName}}" width="200" height="200" err-src="http://google.com/favicon.ico">
+                                                        <img ng-src="{{collectionitem.path}}{{collectionitem.imageName}}" ng-click="showZoomInImage(collectionitem)" width="150" height="150" err-src="http://google.com/favicon.ico">
                                                     </div>
                                                     <div class="panel-title">
                                                         <!--<a data-toggle="collapse" data-parent="#accordion" data-target="#{{keyitem}}chl{{keycollection}}" class="collapsed">{{collectionitem.title}}</a>-->
@@ -107,5 +107,13 @@
         </div>
         <input type="submit" ng-click="confirmOrder()" class="btn btn-default" value="Подтвердить">
         <input type="submit" ng-click="cancelOrder()" class="btn btn-default" value="Отменить">
+    </form>
+</modal>
+<modal title="Керамическое изделие" visible="showZoomInImageModal">
+    <form role="form">
+        <div class="form-group">
+            <span><h4>{{zoomInImage.imgTitle}}</h4></span>
+            <img ng-src="{{zoomInImage.imgSrc}}" width="100%" height="100%" err-src="http://google.com/favicon.ico">
+        </div>
     </form>
 </modal>
