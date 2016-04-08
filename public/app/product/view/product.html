@@ -71,7 +71,7 @@
                                                 <div class="panel-heading">
                                                     <div class="icon thumbnail">
                                                         <img ng-src="{{collectionitem.path}}{{collectionitem.imageName}}" ng-click="showZoomInImage(collectionitem)" width="150" height="150" err-src="http://google.com/favicon.ico">
-                                                        <a ng-click="showZoomInImage(collectionitem)"><span class="glyphicon glyphicon glyphicon-zoom-in"></span></a>
+                                                        <span ng-click="showZoomInImage(collectionitem)" class="glyphicon glyphicon glyphicon-zoom-in"></span>
                                                     </div>
                                                     <div class="panel-title">
                                                         <!--<a data-toggle="collapse" data-parent="#accordion" data-target="#{{keyitem}}chl{{keycollection}}" class="collapsed">{{collectionitem.title}}</a>-->
@@ -147,7 +147,9 @@
     <form role="form">
         <div class="form-group">
             <span><h4>{{zoomInImage.imgTitle}}</h4></span>
-            <img ng-src="{{zoomInImage.imgSrc}}" width="100%" height="100%" err-src="http://google.com/favicon.ico">
+            <div class="icon thumbnail">
+                <img ng-src="{{zoomInImage.imgSrc}}" width="100%" height="100%" err-src="http://google.com/favicon.ico">
+            </div>
         </div>
     </form>
 </modal>
