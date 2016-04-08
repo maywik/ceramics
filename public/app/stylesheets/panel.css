@@ -75,6 +75,14 @@ div.panel-disabled a {
     background-color: #ECEADE;
 }
 
+.panel-default {
+    border-color: rgba(169, 68, 66, 0.18);
+}
+
 .panel-title {
     font-size: 18px;
+}
+
+.panel {
+    background-color: #E1DBCB;
 }

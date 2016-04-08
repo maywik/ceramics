@@ -66,22 +66,32 @@
                             <div id="{{keyitem}}"  class="panel-collapse collapse">
                                 <div class="wrap-elems-paragraph">
                                     <div class="row">
-                                        <div class="col-xs-6 col-sm-6" ng-repeat="(keycollection, collectionitem) in item">
+                                        <div class="col-xs-4 col-sm-4" ng-repeat="(keycollection, collectionitem) in item">
                                             <div class="panel panel-default">
                                                 <div class="panel-heading">
-                                                    <div class="icon thumbnail">
-                                                        <img ng-src="{{collectionitem.path}}{{collectionitem.imageName}}" ng-click="showZoomInImage(collectionitem)" width="150" height="150" err-src="http://google.com/favicon.ico">
-                                                        <span ng-click="showZoomInImage(collectionitem)" class="glyphicon glyphicon glyphicon-zoom-in"></span>
-                                                    </div>
-                                                    <div class="panel-title">
-                                                        <!--<a data-toggle="collapse" data-parent="#accordion" data-target="#{{keyitem}}chl{{keycollection}}" class="collapsed">{{collectionitem.title}}</a>-->
-                                                        <h3>{{collectionitem.title}}</h3>
-                                                        <div>
-                                                            <span>Цена: {{collectionitem.price}}</span>
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-12">
+                                                            <div class="wrap-elems-paragraph">
+                                                                <div class="icon thumbnail">
+                                                                    <img ng-src="{{collectionitem.path}}{{collectionitem.imageName}}" ng-click="showZoomInImage(collectionitem)" width="150" height="150" err-src="http://google.com/favicon.ico">
+                                                                    <span ng-click="showZoomInImage(collectionitem)" class="glyphicon glyphicon glyphicon-zoom-in"></span>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div>
-                                                            <span>Заказать: <input type="checkbox" ng-model= "collectionitem.in_order" ng-change="updateOrderBtn()"></span>
-                                                            <span ng-if="isAdmin">Удалить: <input type="checkbox" ng-model= "collectionitem.rem_selected"></span>
+                                                        <div class="col-xs-12 col-sm-12">
+                                                            <div class="wrap-elems-paragraph">
+                                                                <div class="panel-title">
+                                                                    <!--<a data-toggle="collapse" data-parent="#accordion" data-target="#{{keyitem}}chl{{keycollection}}" class="collapsed">{{collectionitem.title}}</a>-->
+                                                                    <h3>{{collectionitem.title}}</h3>
+                                                                    <div>
+                                                                        <span>Цена: {{collectionitem.price}}</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <span>Заказать: <input type="checkbox" ng-model= "collectionitem.in_order" ng-change="updateOrderBtn()"></span>
+                                                                        <span ng-if="isAdmin">Удалить: <input type="checkbox" ng-model= "collectionitem.rem_selected"></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
