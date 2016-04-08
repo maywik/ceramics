@@ -200,6 +200,7 @@ form.ars-form textarea {
   background-repeat: no-repeat;
   width: 100%;
   height: 250px;
+  opacity: 0.9;
 }
 
 .navbar-inverse .navbar-toggle {
