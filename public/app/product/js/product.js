@@ -70,7 +70,7 @@ angular.module('ceramics').controller('ProductPageController', ['$rootScope',
 
         $scope.updateCheckedProductTitles = function () {
             var remProductNames = [];
-            var catalog = $scope.result.json.catalog;
+            var catalog = $scope.result.json.production.catalog;
 
             for (var catalog_key in catalog) {
                 var catalogObj = catalog[catalog_key];
@@ -94,7 +94,7 @@ angular.module('ceramics').controller('ProductPageController', ['$rootScope',
 
         $scope.updateCheckedProduct = function () {
             var remProductNames = [];
-            var catalog = $scope.result.json.catalog;
+            var catalog = $scope.result.json.production.catalog;
 
             for (var catalog_key in catalog) {
                 var catalogObj = catalog[catalog_key];
@@ -110,7 +110,7 @@ angular.module('ceramics').controller('ProductPageController', ['$rootScope',
 
         $scope.removeContent = function() {
             var remProductNames = [];
-            var catalog = $scope.result.json.catalog;
+            var catalog = $scope.result.json.production.catalog;
 
             for (var catalog_key in catalog) {
                 var catalogObj = catalog[catalog_key];

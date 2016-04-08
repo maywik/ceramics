@@ -70,8 +70,8 @@ app.post('/order', function(req, res) {
   var productOrderText = "";
   var generalMailText = "";
 
-  for (var catalog_key in getCatalog(order.imageNames)) {
-      var products = getCatalog(order.imageNames)[catalog_key];
+  for (var catalog_key in getProduction(order.imageNames).catalog) {
+      var products = getProduction(order.imageNames).catalog[catalog_key];
       for (var product_key in products) {
         var product = products[product_key];
         productOrderText += "<br>" + product.productName + " - " + product.title + " - " + product.price;
@@ -120,7 +120,7 @@ app.post('/remove', function(req, res) {
 
 app.get('/product/catalog', function(req, res, next) {
   fs.readdir(catalogPath, function (err, list) {
-    res.json({'catalog': getCatalog(list), 'productsCount' : list.length});
+    res.json({'production': getProduction(list), 'filesInfo' : list});
   });
 });
 
@@ -145,8 +145,11 @@ var verifyImageName = function(imgName) {
   return options;
 };
 
-var getCatalog = function(list) {
-  var catalog = {};
+var getProduction = function(list) {
+  var production = {
+    catalog: {},
+    productsCount: 0
+  };
   var panelNames = [];
   var productInfo = null;
 
@@ -166,15 +169,19 @@ var getCatalog = function(list) {
       };
 
       if (panelNames.indexOf(imageNameOpts.panelName) == -1) {
-        catalog[imageNameOpts.panelName] = [];
+        production.catalog[imageNameOpts.panelName] = [];
         panelNames.push(imageNameOpts.panelName);
       }
 
-      catalog[imageNameOpts.panelName].push(productInfo);
+      production.catalog[imageNameOpts.panelName].push(productInfo);
     }
   }
 
-  return catalog;
+  for (var key in production.catalog) {
+    production.productsCount+=production.catalog[key].length;
+  }
+
+  return production;
 };
 
 var ipaddress = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";

@@ -10,7 +10,7 @@
             </a>
             <h1>Продукция</h1>
             <p>В этом разделе Вы можете просмотреть каталог и заказать продукцию, которая Вам понравилась.</p>
-            <p class="pull-right">Всего изделий: {{result.json.productsCount}}</p>
+            <p class="pull-right">Всего изделий: {{result.json.production.productsCount}}</p>
             <div class="row" ng-if="isAdmin">
                 <div class="col-md-12">
                     <form action="/upload" enctype="multipart/form-data" method="post">
@@ -20,11 +20,44 @@
                 </div>
             </div>
         </div>
+        <div ng-if="isAdmin" class="panel panel-default panel-result">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12">
+                        <div class="panel panel-default">
+                            <div class="collection panel-heading">
+                                <div class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" data-target="#logs" class="collapsed">Logs</a>
+                                </div>
+                            </div>
+                            <div id="logs"  class="panel-collapse collapse">
+                                <div class="wrap-elems-paragraph">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-12">
+                                            <div class="panel-body text-wrap">
+                                                <h4>Общее количество товара: {{result.json.filesInfo.length}}</h4>
+                                                <label>Названия:
+                                                    <span ng-repeat="item in result.json.filesInfo">
+                                                        <ul>
+                                                            <li>{{item}}</li>
+                                                        </ul>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="panel panel-default panel-result">
             <div class="panel-body">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12">
-                        <div class="panel panel-default" ng-repeat="(keyitem, item) in result.json.catalog">
+                        <div class="panel panel-default" ng-repeat="(keyitem, item) in result.json.production.catalog">
                             <div class="collection panel-heading">
                                 <div class="panel-title">
                                 <a data-toggle="collapse" data-parent="#accordion" data-target="#{{keyitem}}" class="collapsed">{{item[0].productName}}</a>
