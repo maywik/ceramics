@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var multer  = require('multer');
 var nodemailer = require("nodemailer");
 var smtpTransport = require("nodemailer-smtp-transport");
+var archiver = require('archiver');
 var catalogPath = 'public/app/images/catalog';
 
 var smtpTransport = nodemailer.createTransport(smtpTransport({
@@ -116,6 +117,23 @@ app.post('/remove', function(req, res) {
     });
   }
   res.end();
+});
+
+app.post('/download', function(req, res) {
+  var archive = archiver('zip');
+
+  archive.on('error', function(err) {
+    res.status(500).send({error: err.message});
+  });
+
+  archive.on('end', function() {
+    console.log('Archive wrote %d bytes', archive.pointer());
+  });
+
+  res.attachment('catalog.zip');
+  archive.pipe(res);
+  archive.directory(catalogPath, catalogPath.replace('', ''));
+  archive.finalize();
 });
 
 app.get('/product/catalog', function(req, res, next) {
