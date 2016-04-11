@@ -108,6 +108,12 @@ angular.module('ceramics').controller('ProductPageController', ['$rootScope',
             return remProductNames;
         };
 
+        $scope.removePanel = function(panel) {
+            for(var item in panel) {
+               panel[item].rem_selected = !panel[item].rem_selected;
+            }
+        };
+
         $scope.removeContent = function() {
             var remProductNames = [];
             var catalog = $scope.result.json.production.catalog;

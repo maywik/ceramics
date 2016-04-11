@@ -66,7 +66,12 @@
                         <div class="panel panel-default" ng-repeat="(keyitem, item) in result.json.production.catalog">
                             <div class="collection panel-heading">
                                 <div class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" data-target="#{{keyitem}}" class="collapsed">{{item[0].productName}}</a>
+                                    <a data-toggle="collapse" data-parent="#accordion" data-target="#{{keyitem}}" class="collapsed">{{item[0].productName}}</a>
+                                </div>
+                                <div ng-if="isAdmin">
+                                    <div class="panel-title">
+                                        <span>Удалить панель: <input type="checkbox" ng-click="removePanel(item)"></span>
+                                    </div>
                                 </div>
                             </div>
                             <div id="{{keyitem}}"  class="panel-collapse collapse">
