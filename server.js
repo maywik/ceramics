@@ -147,7 +147,7 @@ var verifyImageName = function(imgName) {
   var imageNameOpts = imgName.split("_");
 
   var panelName = imageNameOpts[0] ? imageNameOpts[0] : '';
-  var productName = imageNameOpts[1] ? imageNameOpts[1] : '';
+  var productName = imageNameOpts[1] ? imageNameOpts[1].split('-').join(' ') : '';
   var title = imageNameOpts[2] ? imageNameOpts[2].split('-').join(' ') : '';
   var price = imageNameOpts[3] && parseInt(imageNameOpts[3].split('.')[0]) ? imageNameOpts[3].split('.')[0] + ' грн' : '';
 
