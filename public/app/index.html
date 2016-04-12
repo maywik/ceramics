@@ -69,10 +69,22 @@
 <br/><br/><br/>
 <footer class="footer">
     <div class="container" ng-controller="MainController">
-        <p><a ng-if="!isAdmin" ng-click="getAdminIn()"><span class="glyphicon glyphicon-eye-open"></span></a>
-           <a ng-if="isAdmin" ng-click="getAdminOut()"><span class="glyphicon glyphicon-eye-close"></span></a>
-            Online ceramics market
-        </p>
+        <div class="row">
+            <div class="pull-left">
+                <p><a ng-if="!isAdmin" ng-click="getAdminIn()"><span class="glyphicon glyphicon-eye-open"></span></a>
+                   <a ng-if="isAdmin" ng-click="getAdminOut()"><span class="glyphicon glyphicon-eye-close"></span></a>
+                    Online ceramics market
+                </p>
+            </div>
+            <div id="qooi-counter" class="pull-right">
+                <a href="/">
+                    <img src="http://qooi.ru/counter/standard/005.png" alt="Счетчик посещаемости и статистика сайта">
+                    <div id="qooi-counter-visits"></div>
+                    <div id="qooi-counter-views"></div>
+                </a>
+            </div>
+            <script type="text/javascript" src="http://qooi.ru/counter.js"></script>
+        </div>
         <modal title="Войти на страницу администратора" visible="showAdminModal">
             <form role="form">
                 <div class="form-group">
