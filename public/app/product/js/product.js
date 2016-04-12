@@ -16,19 +16,23 @@ angular.module('ceramics').controller('ProductPageController', ['$rootScope',
         $scope.showModal = false;
         $scope.showConfiramtionModal = false;
         $scope.showZoomInImageModal = false;
+        $scope.isLoading = false;
 
         $scope.toggleModal = function(){
             $scope.showModal = !$scope.showModal;
         };
 
         $scope.getResult = function() {
+            $scope.isLoading = true;
             $http({
                 method: 'GET',
                 url: '/product/catalog'
             }).success(function (data) {
+                $scope.isLoading = false;
                 console.log(data);
                 $scope.result.json = data;
             }).error(function(reason) {
+                $scope.isLoading = false;
                 console.log(reason);
             });
         };
